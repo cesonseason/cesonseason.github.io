@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Lam Chi Chon | CV / Portfolio</title>
+    <title>Lam Chi Chon | CV</title>
     <style>
         * {
             margin: 0;
@@ -12,101 +12,125 @@
         }
 
         body {
-            font-family: 'Segoe UI', 'Poppins', 'Inter', sans-serif;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
-            color: #e0e0e0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Poppins', sans-serif;
+            background: #0c0c0c;
+            color: #e5e5e5;
             scroll-behavior: smooth;
-            min-height: 100vh;
         }
 
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #1a1a2e;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #00d9ff;
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #ff6b6b;
-        }
-
-        nav {
-            background: rgba(10, 10, 20, 0.8);
-            backdrop-filter: blur(12px);
-            color: white;
-            padding: 1rem 2rem;
-            position: sticky;
+        /* 优雅的网格背景 */
+        body::before {
+            content: "";
+            position: fixed;
             top: 0;
-            z-index: 100;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.5rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-            border-bottom: 1px solid rgba(0, 217, 255, 0.3);
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 0;
         }
-        nav a {
-            color: #f0f0f0;
-            text-decoration: none;
-            font-weight: 600;
-            padding: 0.5rem 1.2rem;
-            border-radius: 40px;
-            transition: all 0.3s ease;
-        }
-        nav a:hover {
-            background: linear-gradient(135deg, #00d9ff, #ff6b6b);
-            color: #0a0a0a;
-            transform: translateY(-2px);
+
+        /* 柔和光晕效果 */
+        body::after {
+            content: "";
+            position: fixed;
+            top: -20%;
+            left: -20%;
+            width: 140%;
+            height: 140%;
+            background: radial-gradient(circle at 30% 20%, rgba(100, 80, 200, 0.08), transparent 60%);
+            pointer-events: none;
+            z-index: 0;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 2rem 1.5rem;
+            position: relative;
+            z-index: 2;
         }
 
-        section {
-            background: rgba(20, 20, 40, 0.7);
-            backdrop-filter: blur(10px);
-            border-radius: 28px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            margin-bottom: 2.5rem;
-            padding: 2rem 2rem;
-            scroll-margin-top: 80px;
-            border: 1px solid rgba(0, 217, 255, 0.2);
+        /* 导航栏 - 极简 */
+        nav {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(20, 20, 25, 0.85);
+            backdrop-filter: blur(20px);
+            border-radius: 60px;
+            padding: 0.6rem 1.8rem;
+            display: flex;
+            gap: 2rem;
+            z-index: 100;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+        }
+        nav a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
             transition: all 0.3s ease;
+            letter-spacing: 0.3px;
+        }
+        nav a:hover {
+            color: #fff;
+        }
+
+        /* 卡片 - 轻薄玻璃 */
+        section {
+            background: rgba(18, 18, 22, 0.6);
+            backdrop-filter: blur(12px);
+            border-radius: 32px;
+            margin-bottom: 1.8rem;
+            padding: 2rem 2rem;
+            scroll-margin-top: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s ease;
         }
         section:hover {
-            border-color: rgba(0, 217, 255, 0.5);
+            border-color: rgba(255, 255, 255, 0.12);
+            background: rgba(22, 22, 28, 0.7);
         }
 
         h1 {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, #00d9ff, #ff6b6b);
+            font-size: 3.2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #ffffff 0%, #b0b0b0 100%);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            margin-bottom: 0.3rem;
         }
         h2 {
-            font-size: 1.8rem;
-            border-left: 4px solid #00d9ff;
-            padding-left: 1rem;
+            font-size: 1.5rem;
+            font-weight: 500;
+            letter-spacing: -0.3px;
             margin-bottom: 1.5rem;
-            color: #00d9ff;
+            color: #ccc;
+            display: inline-block;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 0.3rem;
         }
         h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
             margin: 1rem 0 0.5rem 0;
-            color: #ff6b6b;
+            color: #ddd;
         }
 
+        /* Home 区域 - 左右布局 */
         .home-wrapper {
             display: flex;
             flex-wrap: wrap;
-            gap: 2rem;
+            gap: 3rem;
             align-items: center;
             justify-content: space-between;
         }
@@ -118,307 +142,300 @@
             text-align: center;
         }
         .avatar-img {
-            width: 180px;
-            height: 180px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid #00d9ff;
-            box-shadow: 0 0 30px rgba(0, 217, 255, 0.3);
-            transition: transform 0.3s ease;
+            filter: grayscale(20%);
+            transition: all 0.4s ease;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         .avatar-img:hover {
-            transform: scale(1.05);
+            filter: grayscale(0%);
+            transform: scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
         }
         @media (max-width: 700px) {
-            .home-wrapper {
-                flex-direction: column;
-                text-align: center;
-            }
-            h1 { font-size: 2.2rem; }
+            .home-wrapper { flex-direction: column; text-align: center; gap: 1.5rem; }
+            h1 { font-size: 2.4rem; }
+            nav { gap: 1rem; padding: 0.5rem 1.2rem; }
+            nav a { font-size: 0.75rem; }
         }
 
-        .title-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, #00d9ff, #0099cc);
-            color: #0a0a0a;
-            padding: 0.3rem 1rem;
-            border-radius: 40px;
-            font-size: 0.9rem;
-            font-weight: 600;
+        .subtitle {
+            font-size: 1rem;
+            color: #888;
             margin-top: 0.5rem;
+            letter-spacing: 0.5px;
+        }
+        .tagline {
+            font-size: 1rem;
+            color: #a0a0a0;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
             gap: 1rem;
-            margin-top: 1rem;
+            margin-top: 1.2rem;
         }
-        .info-item {
-            background: rgba(10, 10, 20, 0.5);
-            padding: 0.8rem;
-            border-radius: 16px;
-            border-left: 2px solid #00d9ff;
+        .info-chip {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            color: #bbb;
+            transition: 0.2s;
+        }
+        .info-chip:hover {
+            background: rgba(255, 255, 255, 0.1);
         }
 
+        /* 技能 - 简洁标签 */
         .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
             margin-top: 1rem;
         }
-        .skill-cat {
-            background: rgba(10, 10, 20, 0.6);
-            padding: 1rem 1.2rem;
-            border-radius: 20px;
-            border-left: 3px solid #00d9ff;
-            transition: all 0.3s ease;
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            transition: 0.2s;
+            border: 1px solid rgba(255, 255, 255, 0.03);
         }
-        .skill-cat:hover {
-            transform: translateX(5px);
-            background: rgba(0, 217, 255, 0.1);
+        .skill-tag:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
         }
 
+        /* 项目卡片 - 轻盈 */
         .project-card {
-            background: rgba(10, 10, 20, 0.6);
-            border: 1px solid rgba(0, 217, 255, 0.2);
+            background: rgba(12, 12, 14, 0.5);
             border-radius: 24px;
             padding: 1.3rem 1.5rem;
-            margin-bottom: 1.8rem;
+            margin-bottom: 1.2rem;
             transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.04);
         }
         .project-card:hover {
-            transform: translateY(-5px);
-            border-color: #00d9ff;
-            box-shadow: 0 10px 30px rgba(0, 217, 255, 0.15);
+            background: rgba(20, 20, 26, 0.7);
+            border-color: rgba(255, 255, 255, 0.1);
+            transform: translateX(4px);
         }
         .project-title {
-            font-size: 1.3rem;
-            font-weight: 700;
+            font-size: 1.2rem;
+            font-weight: 500;
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
-            color: #00d9ff;
-            border-bottom: 1px solid rgba(0, 217, 255, 0.3);
-            padding-bottom: 0.4rem;
-            margin-bottom: 1rem;
+            color: #ddd;
+            margin-bottom: 0.8rem;
+            letter-spacing: -0.2px;
         }
         .project-detail {
-            margin: 0.6rem 0;
-            padding-left: 0.5rem;
-            border-left: 2px solid #ff6b6b;
+            margin: 0.4rem 0;
+            font-size: 0.85rem;
+            color: #999;
+            line-height: 1.5;
         }
         .badge {
-            background: rgba(255, 107, 107, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+            font-size: 0.7rem;
+            padding: 0.2rem 0.7rem;
+            border-radius: 30px;
+            color: #aaa;
             font-weight: normal;
-            font-size: 0.8rem;
-            padding: 0.2rem 0.6rem;
-            border-radius: 20px;
-            color: #ff6b6b;
         }
         .btn {
             display: inline-block;
-            background: linear-gradient(135deg, #00d9ff, #0099cc);
-            color: #0a0a0a;
-            padding: 0.5rem 1rem;
-            border-radius: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #ccc;
+            padding: 0.35rem 1rem;
+            border-radius: 30px;
             text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-top: 0.5rem;
-            margin-right: 0.5rem;
-            transition: all 0.3s ease;
+            font-size: 0.75rem;
+            margin-top: 0.6rem;
+            margin-right: 0.6rem;
+            transition: 0.2s;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
         .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 217, 255, 0.4);
+            background: rgba(255, 255, 255, 0.12);
+            color: #fff;
+        }
+
+        .award-list {
+            list-style: none;
+            margin-top: 0.5rem;
+        }
+        .award-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.2rem;
+            position: relative;
+            font-size: 0.9rem;
+            color: #bbb;
+        }
+        .award-list li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: #666;
+            font-size: 0.8rem;
         }
 
         .contact-info {
             display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-            font-size: 1.1rem;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            font-size: 0.9rem;
+        }
+        .contact-info div {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
         }
         .contact-info a {
-            color: #00d9ff;
+            color: #ccc;
             text-decoration: none;
         }
         .contact-info a:hover {
-            color: #ff6b6b;
+            color: #fff;
         }
 
         footer {
             text-align: center;
-            padding: 1.5rem;
-            color: #888;
-            font-size: 0.85rem;
-            border-top: 1px solid rgba(0, 217, 255, 0.2);
+            padding: 2rem;
+            color: #555;
+            font-size: 0.75rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            margin-top: 1rem;
         }
     </style>
 </head>
 <body>
 
-<nav>
-    <a href="#home">🏠 Home</a>
-    <a href="#about">👤 About Me</a>
-    <a href="#skills">⚙️ Skills</a>
-    <a href="#projects">📁 Projects</a>
-    <a href="#education">🎓 Education</a>
-    <a href="#contact">📞 Contact</a>
-</nav>
-
 <div class="container">
-    <!-- ========== SECTION 1: HOME / PROFILE ========== -->
+    <!-- ========== HOME ========== -->
     <section id="home">
         <div class="home-wrapper">
             <div class="home-content">
-                <h1>Lam Chi Chon<br><span style="font-size: 1.2rem; color: #ccc;">林子竣</span></h1>
-                <div class="title-badge">📊 Data Science | 🔬 Physics Research | ⚔️ Fencing Athlete</div>
-                <div class="info-grid" style="margin-top: 1.5rem;">
-                    <div class="info-item">🎂 14 March 2003</div>
-                    <div class="info-item">📍 Macau / Hong Kong</div>
-                    <div class="info-item">🌐 Chinese (Fluent) | English (Fluent) | French (Basic)</div>
+                <h1>Lam Chi Chon<br><span style="font-size: 1.2rem; color: #777;">林子竣</span></h1>
+                <div class="subtitle">Data Science · Physics Research · Fencing</div>
+                <div class="tagline">Master's student at Lingnan University | Ex-Physics Researcher | Athlete</div>
+                <div class="info-grid">
+                    <span class="info-chip">🎂 14 March 2003</span>
+                    <span class="info-chip">📍 Macau / Hong Kong</span>
+                    <span class="info-chip">🇨🇳 中文 | 🇬🇧 English | 🇫🇷 Français</span>
                 </div>
             </div>
             <div class="home-avatar">
-                <img src="profile.jpg" alt="Lam Chi Chon" class="avatar-img" onerror="this.src='https://via.placeholder.com/180x180?text=Photo'">
+                <img src="./profile.jpg" alt="Lam Chi Chon" class="avatar-img" onerror="this.style.opacity='0.5'">
             </div>
         </div>
     </section>
 
-    <!-- ========== SECTION 2: ABOUT ME ========== -->
+    <!-- ========== ABOUT ========== -->
     <section id="about">
-        <h2>📖 About Me</h2>
-        <p>I am a Data Science master's student at Lingnan University with a Bachelor's degree in Applied Physics & Chemistry from the University of Macau. My physics background gives me strong analytical and problem-solving skills, which I am now applying to data science. I have hands-on experience in machine learning, deep learning, database management, and data mining through multiple academic projects.</p>
-        <ul style="margin-top: 15px; margin-left: 25px;">
-            <li>🧠 <strong>Analytical Thinking</strong> — Physics research background</li>
-            <li>🤖 <strong>ML & Deep Learning</strong> — Classification, NLP, Sentiment Analysis</li>
-            <li>🗄️ <strong>Database Design</strong> — MySQL, ACID transactions, Index optimization</li>
-            <li>🌐 <strong>Bilingual</strong> — English & Chinese (Cantonese, Mandarin)</li>
-            <li>⚔️ <strong>Award-winning Fencer</strong> — International competition experience</li>
-        </ul>
+        <h2>About</h2>
+        <p style="line-height: 1.7; color: #ccc;">Data Science master's student at Lingnan University with a Bachelor's in Applied Physics & Chemistry from the University of Macau. Physics background sharpened my analytical thinking; now applying it to ML, databases, and data mining. Also an international-level fencer — discipline and strategy cross over between sports and science.</p>
     </section>
 
-    <!-- ========== SECTION 3: SKILLS ========== -->
+    <!-- ========== SKILLS ========== -->
     <section id="skills">
-        <h2>⚙️ Skills</h2>
+        <h2>Skills</h2>
         <div class="skills-grid">
-            <div class="skill-cat">
-                <h3>💻 Machine Learning & AI</h3>
-                <p>Python, pandas, scikit-learn, XGBoost, NLP (LSTM, Word2Vec), SMOTE, Model Evaluation (AUC, F1, Recall)</p>
-            </div>
-            <div class="skill-cat">
-                <h3>🗄️ Database & Data Engineering</h3>
-                <p>MySQL, SQL (joins, transactions, indexing), ACID, Database Design (ERD, 3NF), Performance Optimization</p>
-            </div>
-            <div class="skill-cat">
-                <h3>📊 Data Analysis & Visualization</h3>
-                <p>Tableau, Matplotlib, Seaborn, EDA, Feature Selection, Correlation Analysis, Pandas, NumPy</p>
-            </div>
-            <div class="skill-cat">
-                <h3>🔧 Tools & Platforms</h3>
-                <p>Git, Jupyter, PyCharm, Google Colab, MySQL Workbench, Excel, PowerPoint, Canva</p>
-            </div>
-            <div class="skill-cat">
-                <h3>🗣️ Languages</h3>
-                <p>Chinese (Cantonese, Mandarin - Fluent), English (Fluent), French (Basic)</p>
-            </div>
+            <span class="skill-tag">Python (pandas, sklearn)</span>
+            <span class="skill-tag">SQL / MySQL</span>
+            <span class="skill-tag">XGBoost / ML</span>
+            <span class="skill-tag">LSTM / NLP</span>
+            <span class="skill-tag">Tableau</span>
+            <span class="skill-tag">Database Design (3NF)</span>
+            <span class="skill-tag">EDA & Visualization</span>
+            <span class="skill-tag">Git / Jupyter</span>
+            <span class="skill-tag">Chinese & English</span>
         </div>
     </section>
 
-    <!-- ========== SECTION 4: PROJECTS ========== -->
+    <!-- ========== PROJECTS ========== -->
     <section id="projects">
-        <h2>📁 Projects</h2>
+        <h2>Projects</h2>
 
         <div class="project-card">
-            <div class="project-title">💳 Credit Card Fraud Detection <span class="badge">ML | Group</span></div>
-            <div class="project-detail"><strong>Problem:</strong> Extreme class imbalance (fraud <0.2%) in financial transactions.</div>
-            <div class="project-detail"><strong>Approach:</strong> SMOTE + XGBoost with 5-fold stratified CV.</div>
-            <div class="project-detail"><strong>Outcome:</strong> AUC 0.97, F1 0.89, Recall 87.1%.</div>
-            <div class="project-detail"><strong>My Role:</strong> Evaluation framework, confusion matrix, result validation.</div>
-            <a href="#" class="btn">🔗 GitHub</a>
+            <div class="project-title">💳 Credit Card Fraud Detection <span class="badge">ML · Group</span></div>
+            <div class="project-detail">SMOTE + XGBoost · AUC 0.97, F1 0.89, Recall 87%</div>
+            <div class="project-detail">My part: evaluation framework, confusion matrix, validation</div>
+            <a href="#" class="btn">GitHub</a>
         </div>
 
         <div class="project-card">
-            <div class="project-title">🐦 Social Media Sentiment Analysis <span class="badge">DL | Group</span></div>
-            <div class="project-detail"><strong>Problem:</strong> Automated sentiment analysis for Weibo posts.</div>
-            <div class="project-detail"><strong>Approach:</strong> LSTM + Word2Vec, hyperparameter tuning.</div>
-            <div class="project-detail"><strong>Outcome:</strong> 74.58% test accuracy on 3-class sentiment.</div>
-            <div class="project-detail"><strong>My Role:</strong> Data preprocessing, segmentation, stop-word removal.</div>
-            <a href="#" class="btn">🔗 GitHub</a>
+            <div class="project-title">🐦 Weibo Sentiment Analysis <span class="badge">DL · Group</span></div>
+            <div class="project-detail">LSTM + Word2Vec · 74.6% test accuracy on 3-class sentiment</div>
+            <div class="project-detail">My part: preprocessing, segmentation, stop-word removal</div>
+            <a href="#" class="btn">GitHub</a>
         </div>
 
         <div class="project-card">
-            <div class="project-title">🛒 Digital Products Database <span class="badge">DB | Group</span></div>
-            <div class="project-detail"><strong>Problem:</strong> High-concurrency e-commerce database with ACID guarantees.</div>
-            <div class="project-detail"><strong>Approach:</strong> MySQL, 3NF design, index optimization, transaction management.</div>
-            <div class="project-detail"><strong>Outcome:</strong> 12ms avg latency, 134 TPS, zero orphaned records.</div>
-            <div class="project-detail"><strong>My Role:</strong> Documentation, consistency checks, report writing.</div>
-            <a href="#" class="btn">🔗 GitHub</a>
+            <div class="project-title">🛒 Digital Products Database <span class="badge">DB · Group</span></div>
+            <div class="project-detail">MySQL, 3NF, ACID · 12ms avg latency, 134 TPS</div>
+            <div class="project-detail">My part: documentation, consistency checks</div>
+            <a href="#" class="btn">GitHub</a>
         </div>
 
         <div class="project-card">
-            <div class="project-title">⚡ Data Center Energy Prediction <span class="badge">DM | Group</span></div>
-            <div class="project-detail"><strong>Problem:</strong> Predict renewable energy adoption in AI data centers.</div>
-            <div class="project-detail"><strong>Approach:</strong> Gradient Boosting, feature selection, grouped validation.</div>
-            <div class="project-detail"><strong>Outcome:</strong> R² 0.784, top predictors: internet penetration, green initiatives.</div>
-            <div class="project-detail"><strong>My Role:</strong> Documentation, integrity checks, report writing.</div>
-            <a href="#" class="btn">🔗 GitHub</a>
+            <div class="project-title">⚡ Data Center Energy Prediction <span class="badge">DM · Group</span></div>
+            <div class="project-detail">Gradient Boosting · R² 0.784 on grouped split</div>
+            <div class="project-detail">My part: documentation, integrity checks</div>
+            <a href="#" class="btn">GitHub</a>
         </div>
 
         <div class="project-card">
-            <div class="project-title">🔬 Nb₂O₅:TiO₂ Smart Window Material <span class="badge">Research | Individual</span></div>
-            <div class="project-detail"><strong>Problem:</strong> High-temperature annealing limits glass compatibility.</div>
-            <div class="project-detail"><strong>Approach:</strong> Low-temperature synthesis, Nb-Ti electronic coupling optimization.</div>
-            <div class="project-detail"><strong>Outcome:</strong> 40% light modulation, 0.8mAh/cm² storage at <350°C.</div>
-            <div class="project-detail"><strong>My Role:</strong> Full project lifecycle (design, synthesis, analysis, thesis).</div>
-            <a href="#" class="btn">📄 Abstract</a>
+            <div class="project-title">🔬 Nb₂O₅:TiO₂ Smart Window <span class="badge">Research · Individual</span></div>
+            <div class="project-detail">40% light modulation, 0.8mAh/cm² storage at <350°C</div>
+            <div class="project-detail">Full lifecycle: design, synthesis, analysis, thesis</div>
+            <a href="#" class="btn">Abstract</a>
         </div>
     </section>
 
-    <!-- ========== SECTION 5: EDUCATION ========== -->
+    <!-- ========== EDUCATION & AWARDS ========== -->
     <section id="education">
-        <h2>🎓 Education</h2>
+        <h2>Education & Awards</h2>
         <div class="project-card">
-            <div class="project-title">🎓 Master of Science in Data Science <span class="badge">2025 - Present</span></div>
-            <div class="project-detail"><strong>Institution:</strong> Lingnan University, Hong Kong</div>
-            <div class="project-detail"><strong>Expected Graduation:</strong> May 2026</div>
+            <div class="project-title">🎓 M.Sc. Data Science <span class="badge">Lingnan University · 2025–2026</span></div>
         </div>
         <div class="project-card">
-            <div class="project-title">🔬 Bachelor of Science in Applied Physics & Chemistry <span class="badge">2021 - 2025</span></div>
-            <div class="project-detail"><strong>Institution:</strong> University of Macau</div>
-            <div class="project-detail"><strong>Thesis:</strong> Nb₂O₅:TiO₂ Electrochromic & Battery Material</div>
-        </div>
-        <div class="project-card">
-            <div class="project-title">📚 High School <span class="badge">2019 - 2021</span></div>
-            <div class="project-detail">Ruthin School (UK) | Pui Ching Middle School (Macau)</div>
+            <div class="project-title">🔬 B.Sc. Applied Physics & Chemistry <span class="badge">University of Macau · 2021–2025</span></div>
         </div>
 
-        <h3 style="margin-top: 20px;">🏆 Awards</h3>
-        <ul style="margin-left: 25px;">
-            <li>⚔️ <strong>2025</strong> — U23 Asian Fencing Championships (28th Place)</li>
-            <li>⚔️ <strong>2024</strong> — Macau Fencing Ranking Tournament, Men's Epee (Runner-up)</li>
-            <li>🏆 <strong>2024</strong> — National University Physics Experiment Competition (First Prize)</li>
-            <li>⚔️ <strong>2022</strong> — Macau Fencing Referee Level 3 (Foil, Epee, Sabre)</li>
+        <h3 style="margin-top: 1.2rem;">🏆 Awards</h3>
+        <ul class="award-list">
+            <li>U23 Asian Fencing Championships — 28th Place (2025)</li>
+            <li>Macau Fencing Ranking Tournament, Men's Epee — Runner-up (2024)</li>
+            <li>National University Physics Experiment Competition — First Prize (2024)</li>
+            <li>Macau Fencing Referee Level 3 (Foil, Epee, Sabre) — 2022</li>
         </ul>
     </section>
 
-    <!-- ========== SECTION 6: CONTACT ========== -->
+    <!-- ========== CONTACT ========== -->
     <section id="contact">
-        <h2>📬 Contact</h2>
+        <h2>Contact</h2>
         <div class="contact-info">
-            📧 <strong>Email:</strong> cesonseason@gmail.com<br>
-            📞 <strong>Phone:</strong> +853 63281260 / +86 17205909032<br>
-            🔗 <strong>LinkedIn:</strong> <a href="#">linkedin.com/in/lam-chi-chon</a><br>
-            🐙 <strong>GitHub:</strong> <a href="#">github.com/cesonseason</a><br>
-            📍 <strong>Location:</strong> Macau / Hong Kong
+            <div>📧 cesonseason@gmail.com</div>
+            <div>📞 +853 63281260</div>
+            <div>🔗 <a href="#">linkedin.com/in/lam-chi-chon</a></div>
+            <div>🐙 <a href="#">github.com/cesonseason</a></div>
         </div>
     </section>
 </div>
 
 <footer>
-    © 2025 Lam Chi Chon (林子竣) — CV / Portfolio
+    Lam Chi Chon (林子竣) — CV
 </footer>
 
 </body>
