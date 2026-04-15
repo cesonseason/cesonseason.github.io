@@ -199,14 +199,15 @@
         <h1>Lam Chi Chon (林子竣)</h1>
         <div class="headline-box">
             <div class="positioning">🎯 Seeking Data Analyst Internship | Data Science Graduate May 2026</div>
-            <p>Master's student in Data Science at Lingnan University with strong background in physics research and data analysis. Seeking summer 2026 internship in data analytics or business intelligence.</p>
+            <p>Master's student in Data Science at Lingnan University with strong background in physics research, machine learning, and database management. Seeking summer 2026 internship in data analytics or business intelligence.</p>
             <div class="tags">
                 <span class="tag">Data Analytics</span>
                 <span class="tag">Python</span>
                 <span class="tag">SQL</span>
                 <span class="tag">Tableau</span>
-                <span class="tag">Data Science</span>
                 <span class="tag">Machine Learning</span>
+                <span class="tag">Deep Learning</span>
+                <span class="tag">Database Design</span>
             </div>
         </div>
     </section>
@@ -216,12 +217,13 @@
         <h2>About Me</h2>
         <p><strong>Education:</strong> M.Sc. in Data Science, Lingnan University, Hong Kong — Expected May 2026<br>
         B.Sc. in Applied Physics & Chemistry, University of Macau — Completed May 2025</p>
-        <p>I am a Data Science master's student at Lingnan University with a Bachelor's degree in Applied Physics & Chemistry from the University of Macau. My physics background gives me strong analytical and problem-solving skills, which I am now applying to data science. I am passionate about turning data into actionable insights and seeking an internship where I can contribute to real-world business problems.</p>
+        <p>I am a Data Science master's student at Lingnan University with a Bachelor's degree in Applied Physics & Chemistry from the University of Macau. My physics background gives me strong analytical and problem-solving skills, which I am now applying to data science. I have hands-on experience in machine learning, deep learning, database management, and data mining through multiple academic projects. I am passionate about turning data into actionable insights and seeking an internship where I can contribute to real-world business problems.</p>
         <ul style="margin-top: 15px; margin-left: 25px;">
             <li><strong>Strength 1:</strong> Strong analytical thinking from physics research background</li>
-            <li><strong>Strength 2:</strong> Data analysis and visualization (Python, Tableau, Excel)</li>
-            <li><strong>Strength 3:</strong> Bilingual communication (English, Chinese) and team collaboration</li>
-            <li><strong>Strength 4:</strong> Award-winning researcher with first-place national physics competition</li>
+            <li><strong>Strength 2:</strong> Machine Learning & Deep Learning (Classification, NLP, Sentiment Analysis)</li>
+            <li><strong>Strength 3:</strong> Database Design & Management (MySQL, ACID transactions, Index optimization)</li>
+            <li><strong>Strength 4:</strong> Bilingual communication (English, Chinese) and team collaboration</li>
+            <li><strong>Strength 5:</strong> Award-winning fencer with international competition experience</li>
         </ul>
     </section>
 
@@ -230,20 +232,24 @@
         <h2>Skills</h2>
         <div class="skills-grid">
             <div class="skill-cat">
-                <h3>💻 Technical Skills</h3>
-                <p>Python (pandas, scikit-learn), SQL, Excel, Statistics, Machine Learning, Data Visualization, OriginLab, Weka</p>
+                <h3>💻 Machine Learning & AI</h3>
+                <p>Python (pandas, scikit-learn, XGBoost), NLP (LSTM, Word2Vec), SMOTE, Hyperparameter Tuning, Model Evaluation (AUC, F1, Recall)</p>
             </div>
             <div class="skill-cat">
-                <h3>📊 Business & Data Skills</h3>
-                <p>Problem framing, Data storytelling, Reporting, Data cleaning, Exploratory Data Analysis (EDA), Dashboard creation</p>
+                <h3>🗄️ Database & Data Engineering</h3>
+                <p>MySQL, SQL (joins, transactions, indexing), ACID properties, Database Design (ERD, 3NF), Performance Optimization</p>
+            </div>
+            <div class="skill-cat">
+                <h3>📊 Data Analysis & Visualization</h3>
+                <p>Tableau, Matplotlib, Seaborn, EDA, Feature Selection, Correlation Analysis, Pandas, NumPy</p>
             </div>
             <div class="skill-cat">
                 <h3>🔧 Tools & Platforms</h3>
-                <p>PyCharm, Google Colab, Tableau, Jupyter Notebook, Git, Microsoft Office, Canva, SolidWorks</p>
+                <p>Git, Jupyter Notebook, PyCharm, Google Colab, MySQL Workbench, Excel, PowerPoint, Canva</p>
             </div>
             <div class="skill-cat">
-                <h3>🗣️ Languages & AI</h3>
-                <p>Chinese (Cantonese, Mandarin - Fluent), English (Fluent), French (Basic), ChatGPT, Copilot, DeepSeek, Ollama</p>
+                <h3>🗣️ Languages</h3>
+                <p>Chinese (Cantonese, Mandarin - Fluent), English (Fluent), French (Basic)</p>
             </div>
         </div>
     </section>
@@ -252,46 +258,100 @@
     <section id="projects">
         <h2>Projects Portfolio</h2>
 
-        <!-- PROJECT 1: Bachelor's Thesis (Individual) -->
+        <!-- PROJECT 1: Credit Card Fraud Detection (ML Group Project) -->
         <div class="project-card">
             <div class="project-title">
-                <span>🔬 Nb₂O₅:TiO₂ Electrochromic & Battery Material</span>
-                <span class="badge">2025 | Individual</span>
+                <span>💳 Credit Card Fraud Detection using Machine Learning</span>
+                <span class="badge">2025 | Group Project (6 members)</span>
             </div>
-            <div class="project-detail"><strong>Problem:</strong> Traditional TiNb₂O₇ requires high-temperature annealing that is incompatible with glass substrates for smart window applications.</div>
-            <div class="project-detail"><strong>Data:</strong> Experimental data from material characterization tests, including visible light modulation rates and energy storage capacity measurements.</div>
+            <div class="project-detail"><strong>Problem:</strong> Credit card fraud detection is a core task in financial risk control, constrained by extreme class imbalance (fraud < 0.2% of transactions) and evolving fraudulent behavior.</div>
+            <div class="project-detail"><strong>Data:</strong> Kaggle Credit Card Fraud Detection dataset (284,807 transactions, 31 fields: Time, Amount, 28 PCA-transformed features V1-V28, binary Class label).</div>
+            <div class="project-detail"><strong>Approach:</strong> Built end-to-end ML pipeline: EDA, feature standardization, stratified split, SMOTE for imbalance handling. Trained Logistic Regression, Random Forest, and XGBoost with 5-fold stratified CV and grid search (F1 optimization).</div>
+            <div class="project-detail"><strong>Outcome/Impact:</strong> XGBoost achieved AUC 0.97, F1-score 0.89, Precision 92.5%, Recall 87.1% after SMOTE. Model can intercept >87% fraud while keeping false alarms low.</div>
+            <div class="project-detail"><strong>My Contribution:</strong> Evaluation framework setup, confusion matrix and ROC-based comparison, result validation checks, and report writing.</div>
+            <a href="#" class="btn">🔗 GitHub Repo</a>
+        </div>
+
+        <!-- PROJECT 2: Social Media Sentiment Analysis (DL Group Project) -->
+        <div class="project-card">
+            <div class="project-title">
+                <span>🐦 Social Media Sentiment Analysis with LSTM</span>
+                <span class="badge">2025 | Group Project (6 members)</span>
+            </div>
+            <div class="project-detail"><strong>Problem:</strong> Social media platforms carry rich emotional signals; businesses and governments need automated sentiment analysis for precision marketing and public opinion monitoring.</div>
+            <div class="project-detail"><strong>Data:</strong> 89,140 Weibo hot-list posts collected via crawling, including text, likes, comments, reposts, and blogger information.</div>
+            <div class="project-detail"><strong>Approach:</strong> Built LSTM-based deep learning classifier with Word2Vec embeddings. Compared Cross-Entropy vs MSE loss, tested learning rates (0.1-0.0001) and batch sizes (8-128). Used early stopping to prevent overfitting.</div>
+            <div class="project-detail"><strong>Outcome/Impact:</strong> Achieved 74.58% test accuracy on three-class sentiment (positive/negative/neutral). Cross-Entropy loss outperformed MSE, learning rate 0.001 gave best convergence.</div>
+            <div class="project-detail"><strong>My Contribution:</strong> Data preprocessing, stop-word removal, segmentation, and model evaluation support.</div>
+            <a href="#" class="btn">🔗 GitHub Repo</a>
+        </div>
+
+        <!-- PROJECT 3: Digital Products Trading Platform Database (BM Group Project) -->
+        <div class="project-card">
+            <div class="project-title">
+                <span>🛒 Digital Products Trading Platform Database Design</span>
+                <span class="badge">2025 | Group Project (6 members)</span>
+            </div>
+            <div class="project-detail"><strong>Problem:</strong> Online trading platforms for digital products need efficient, reliable DBMS to secure transactions, ensure data consistency, and handle high concurrency.</div>
+            <div class="project-detail"><strong>Approach:</strong> Designed MySQL database with InnoDB engine. Created ER diagram, normalized to 3NF. Implemented ACID transactions for order-payment-license consistency. Designed indexes for query optimization (browsing, order history, bestsellers).</div>
+            <div class="project-detail"><strong>Outcome/Impact:</strong> Achieved <12ms average query latency, 134 TPS write throughput. Zero orphaned records. 95% queries completed within 35ms, meeting <200ms goal.</div>
+            <div class="project-detail"><strong>My Contribution:</strong> Document editing & layout, consistency/integrity checks, and report writing.</div>
+            <a href="#" class="btn">🔗 GitHub Repo</a>
+        </div>
+
+        <!-- PROJECT 4: Data Center Energy Prediction (DM Group Project) -->
+        <div class="project-card">
+            <div class="project-title">
+                <span>⚡ AI Data Center Renewable Energy Prediction</span>
+                <span class="badge">2025 | Group Project (6 members)</span>
+            </div>
+            <div class="project-detail"><strong>Problem:</strong> AI industry growth drives increased energy consumption in data centers. Need to identify key factors driving renewable energy adoption and predict usage percentages.</div>
+            <div class="project-detail"><strong>Data:</strong> Global Data Center Dataset (191 countries/regions, 21 raw fields after cleaning: power capacity, internet penetration, cooling technologies, tier distribution).</div>
+            <div class="project-detail"><strong>Approach:</strong> Two-round data cleaning (missing value imputation, outlier winsorization, one-hot encoding). Feature selection via consensus score (Pearson/Spearman/MI/Permutation). Compared 9 models; Gradient Boosting selected (R²=0.784 on 8:2 grouped split).</div>
+            <div class="project-detail"><strong>Outcome/Impact:</strong> Final Gradient Boosting model (n_est=400, lr=0.08, max_depth=4) explains 72-78% of variance. Top predictors: internet penetration, green initiatives (PPA/REC), efficient cooling.</div>
+            <div class="project-detail"><strong>My Contribution:</strong> Document editing & layout, consistency checks, and report writing.</div>
+            <a href="#" class="btn">🔗 GitHub Repo</a>
+        </div>
+
+        <!-- PROJECT 5: Smart Contract Vulnerability Detection (Initial Proposal) -->
+        <div class="project-card">
+            <div class="project-title">
+                <span>🔒 Smart Contract Vulnerability Detection (Web3 Security)</span>
+                <span class="badge">2026 | Group Project (6 members)</span>
+            </div>
+            <div class="project-detail"><strong>Problem:</strong> Smart contract vulnerabilities have caused >$3.1B losses. Existing tools produce high false positives (>95% on some benchmarks) and struggle with logic flaws.</div>
+            <div class="project-detail"><strong>Approach:</strong> Proposed multi-agent framework (n8n-orchestrated) combining tool evidence (Slither, Mythril) with GPT-4o-based agents (Triage → Explanation → Adversarial Verification → Report).</div>
+            <div class="project-detail"><strong>Outcome/Impact:</strong> Framework aims to reduce false positives while maintaining recall, with traceable evidence links and structured cross-checking. Currently in proposal/implementation phase.</div>
+            <div class="project-detail"><strong>My Contribution:</strong> Proposal writing, literature review, methodology design, and multi-agent workflow planning.</div>
+            <a href="#" class="btn">🔗 GitHub Repo</a>
+        </div>
+
+        <!-- PROJECT 6: France Car Accident Data Visualization (DV Group Project) -->
+        <div class="project-card">
+            <div class="project-title">
+                <span>📊 France Car Accident Fatalities Analysis (2005-2016)</span>
+                <span class="badge">2025 | Group Project</span>
+            </div>
+            <div class="project-detail"><strong>Problem:</strong> Analyze monthly distribution of car accident fatalities in France to identify seasonal patterns and risk factors.</div>
+            <div class="project-detail"><strong>Data:</strong> French car accident fatality records from 2005-2016, aggregated by month.</div>
+            <div class="project-detail"><strong>Approach:</strong> Data cleaning and aggregation, bar chart visualization with seasonal grouping, risk analysis by season (winter/spring/summer/autumn).</div>
+            <div class="project-detail"><strong>Outcome/Impact:</strong> Identified October (9,470) and June (9,330) as peak fatality months. Autumn is most dangerous season. February (6,740) and August (7,430) are safest months.</div>
+            <div class="project-detail"><strong>My Contribution:</strong> Data analysis, seasonal risk interpretation, and report writing.</div>
+            <a href="#" class="btn">📊 View Visualization</a>
+        </div>
+
+        <!-- PROJECT 7: Bachelor's Thesis (Individual Research) -->
+        <div class="project-card">
+            <div class="project-title">
+                <span>🔬 Nb₂O₅:TiO₂ Electrochromic & Battery Material Research</span>
+                <span class="badge">2025 | Individual Thesis</span>
+            </div>
+            <div class="project-detail"><strong>Problem:</strong> Traditional TiNb₂O₇ requires high-temperature annealing incompatible with glass substrates for smart window applications.</div>
+            <div class="project-detail"><strong>Data:</strong> Experimental data from material characterization tests (visible light modulation rates, energy storage capacity measurements).</div>
             <div class="project-detail"><strong>Approach:</strong> Developed low-temperature Nb₂O₅:TiO₂ dual-function film. Used Nb-Ti electronic coupling effect to optimize performance. Conducted material synthesis, data measurement, and results analysis.</div>
-            <div class="project-detail"><strong>Outcome/Impact:</strong> Achieved 40% visible light modulation and 0.8mAh/cm² energy storage at temperatures below 350°C, providing new solution for smart window industrialization.</div>
-            <div class="project-detail"><strong>My Contribution:</strong> Full project lifecycle - topic selection, experimental design, data measurement, results analysis, and thesis writing. Advisor: Prof. Wu Jiawei.</div>
+            <div class="project-detail"><strong>Outcome/Impact:</strong> Achieved 40% visible light modulation and 0.8mAh/cm² energy storage at <350°C, providing new solution for smart window industrialization.</div>
+            <div class="project-detail"><strong>My Contribution:</strong> Full project lifecycle - topic selection, experimental design, data measurement, results analysis, thesis writing. Advisor: Prof. Wu Jiawei.</div>
             <a href="#" class="btn">📄 View Thesis Abstract</a>
-        </div>
-
-        <!-- PROJECT 2: Customer Churn Prediction -->
-        <div class="project-card">
-            <div class="project-title">
-                <span>📊 Customer Churn Prediction for Telecom</span>
-                <span class="badge">Jan 2025 | Individual</span>
-            </div>
-            <div class="project-detail"><strong>Problem:</strong> Predict which telecom customers are likely to churn to help business take preventive actions.</div>
-            <div class="project-detail"><strong>Data:</strong> Telecom customer dataset with 7,000 records, 20 features including tenure, monthly charges, contract type.</div>
-            <div class="project-detail"><strong>Approach:</strong> Used Python (pandas) for EDA and data cleaning. Built Random Forest and XGBoost models. Evaluated using accuracy and ROC-AUC.</div>
-            <div class="project-detail"><strong>Outcome/Impact:</strong> Achieved 85% accuracy, identified top 3 churn factors (month-to-month contracts, no online security, low tenure).</div>
-            <div class="project-detail"><strong>My Contribution:</strong> Full project lifecycle - data cleaning, feature engineering, model building, and presentation.</div>
-            <a href="#" class="btn">🔗 View Code</a>
-        </div>
-
-        <!-- PROJECT 3: Fencing Data Analytics (Optional - shows your unique background) -->
-        <div class="project-card">
-            <div class="project-title">
-                <span>⚡ Fencing Performance Analytics Dashboard</span>
-                <span class="badge">2024 | Individual</span>
-            </div>
-            <div class="project-detail"><strong>Problem:</strong> As a competitive fencer, wanted to analyze match performance data to identify strengths and weaknesses.</div>
-            <div class="project-detail"><strong>Data:</strong> Personal competition records from 2024 Macau Fencing Ranking Tournament (Runner-up) and training session metrics.</div>
-            <div class="project-detail"><strong>Approach:</strong> Collected and organized match statistics, created Tableau dashboard to visualize performance trends, point distribution, and opponent analysis.</div>
-            <div class="project-detail"><strong>Outcome/Impact:</strong> Identified key areas for improvement leading to better tactical decisions in subsequent competitions.</div>
-            <div class="project-detail"><strong>My Contribution:</strong> Data collection, dashboard design, and performance analysis.</div>
-            <a href="#" class="btn">📊 View Dashboard</a>
         </div>
     </section>
 
@@ -300,9 +360,25 @@
         <h2>Resume / CV</h2>
         <p>Download my full resume below (PDF):</p>
         <a href="#" class="btn">📄 Download Resume (PDF)</a>
-        <p style="margin-top: 15px;"><strong>Quick summary:</strong> Data Science master's student at Lingnan University. Bachelor's in Applied Physics from University of Macau. Award-winning researcher (National Physics Competition First Prize). Experienced fencing coach and athlete. Skills in Python, SQL, Tableau, and data visualization. Bilingual (English & Chinese).</p>
-        <p style="margin-top: 10px;"><strong>Awards:</strong> 2024 National University Physics Experiment Competition - First Prize | 2024 Macau Fencing Ranking Tournament - Runner-up | U23 Asian Fencing Championships 2025 - 28th Place</p>
-        <p style="margin-top: 10px;"><strong>Certifications:</strong> Macau Fencing Referee Level 3 (Foil, Epee, Sabre) | Bachelor's Degree - University of Macau</p>
+        <p style="margin-top: 15px;"><strong>Quick summary:</strong> Data Science master's student at Lingnan University. Bachelor's in Applied Physics from University of Macau. Experienced in ML classification, deep learning (LSTM), database design (MySQL), and data mining. Award-winning fencer with international competition experience. Bilingual (English & Chinese).</p>
+        
+        <h3 style="margin-top: 20px;">🏆 Fencing Awards</h3>
+        <ul style="margin-left: 25px;">
+            <li><strong>2025:</strong> U23 Asian Fencing Championships - 28th Place</li>
+            <li><strong>2024:</strong> Macau Fencing Ranking Tournament (Men's Epee) - Runner-up</li>
+            <li><strong>2022:</strong> Macau Fencing Referee Level 3 (Foil, Epee, Sabre)</li>
+        </ul>
+
+        <h3 style="margin-top: 15px;">🏅 Academic Awards</h3>
+        <ul style="margin-left: 25px;">
+            <li><strong>2024:</strong> 10th National University Physics Experiment Competition - First Prize</li>
+        </ul>
+
+        <h3 style="margin-top: 15px;">📜 Certifications</h3>
+        <ul style="margin-left: 25px;">
+            <li>Macau Fencing Referee Level 3 (Foil, Epee, Sabre) - 2022</li>
+            <li>Bachelor's Degree Certificate - University of Macau, 2025</li>
+        </ul>
     </section>
 
     <!-- ========== SECTION 6: CONTACT ========== -->
