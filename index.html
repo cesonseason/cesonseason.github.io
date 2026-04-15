@@ -1,10 +1,254 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ceseon Season - Data Analytics Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: #f4f4f4;
+            color: #333;
+        }
+        nav {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 5px 10px;
+        }
+        nav a:hover {
+            background: #34495e;
+            border-radius: 5px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+        section {
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            padding: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .headline-box {
+            background: #ecf0f1;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+        .positioning {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .tag {
+            background: #3498db;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .skill-cat {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .project-card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        .project-detail {
+            margin: 10px 0;
+            padding-left: 15px;
+            border-left: 3px solid #3498db;
+        }
+        .btn {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+        .btn:hover {
+            background: #2980b9;
+        }
+        .contact-info {
+            font-size: 1.1rem;
+            line-height: 2;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #7f8c8d;
+        }
+        @media (max-width: 600px) {
+            nav a {
+                display: inline-block;
+                margin: 5px;
+            }
+            section {
+                padding: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello, I'm [你的名字]</h1>
-    <p>Welcome to my job-seeking website.</p>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About Me</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#resume">Resume</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<div class="container">
+    <!-- SECTION 1: HOME -->
+    <section id="home">
+        <h1>Ceseon Season</h1>
+        <div class="headline-box">
+            <div class="positioning">🎯 Seeking Data Analyst Internship | Business Analytics Graduate May 2026</div>
+            <p>Passionate data analytics student seeking summer 2026 internship in business intelligence and data analytics.</p>
+            <div class="tags">
+                <span class="tag">Data Analytics</span>
+                <span class="tag">Python</span>
+                <span class="tag">SQL</span>
+                <span class="tag">Tableau</span>
+                <span class="tag">Business Intelligence</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: ABOUT ME -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p><strong>Education:</strong> B.Sc. in Business Analytics — Expected May 2026</p>
+        <p>I am a passionate Business Analytics student with strong interest in turning data into actionable insights. I have experience in Python, SQL, and data visualization. I am looking for an internship where I can apply my analytical skills to solve real business problems.</p>
+        <ul style="margin-top: 15px; margin-left: 25px;">
+            <li><strong>Strength 1:</strong> Data storytelling and visualization</li>
+            <li><strong>Strength 2:</strong> Statistical analysis and problem-solving</li>
+            <li><strong>Strength 3:</strong> Team collaboration and communication</li>
+        </ul>
+    </section>
+
+    <!-- SECTION 3: SKILLS -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-cat">
+                <h3>💻 Technical Skills</h3>
+                <p>Python, SQL, Excel, Statistics, Data Visualization, Machine Learning basics</p>
+            </div>
+            <div class="skill-cat">
+                <h3>📊 Business Skills</h3>
+                <p>Problem framing, A/B testing, Metrics definition, Data storytelling, Reporting</p>
+            </div>
+            <div class="skill-cat">
+                <h3>🔧 Tools</h3>
+                <p>pandas, scikit-learn, Tableau, Power BI, Git, Jupyter Notebook</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: PROJECTS -->
+    <section id="projects">
+        <h2>Projects</h2>
+
+        <!-- PROJECT 1 -->
+        <div class="project-card">
+            <div class="project-title">📊 Customer Churn Prediction — Jan 2025 | Individual</div>
+            <div class="project-detail"><strong>Problem:</strong> Predict which customers are likely to churn to help business take preventive actions.</div>
+            <div class="project-detail"><strong>Data:</strong> Telecom customer dataset with 7,000 records, 20 features including tenure, monthly charges, contract type.</div>
+            <div class="project-detail"><strong>Approach:</strong> Used Python pandas for EDA, built Random Forest and XGBoost models.</div>
+            <div class="project-detail"><strong>Outcome:</strong> Achieved 85% accuracy, identified top 3 churn factors.</div>
+            <div class="project-detail"><strong>My Contribution:</strong> Full project lifecycle - data cleaning, modeling, and presentation.</div>
+            <a href="#" class="btn">🔗 View Code</a>
+        </div>
+
+        <!-- PROJECT 2 -->
+        <div class="project-card">
+            <div class="project-title">📈 Sales Dashboard for Retail — Sep 2024 | Group Project</div>
+            <div class="project-detail"><strong>Problem:</strong> Retail company needed an interactive dashboard to track sales performance.</div>
+            <div class="project-detail"><strong>Data:</strong> Sales transaction data from 2023-2024, 50,000+ records with product, region, and sales amount.</div>
+            <div class="project-detail"><strong>Approach:</strong> Cleaned data with Python, created interactive Tableau dashboard with KPIs and filters.</div>
+            <div class="project-detail"><strong>Outcome:</strong> Dashboard helped identify top products and seasonal trends, leading to 10% sales increase.</div>
+            <div class="project-detail"><strong>My Contribution:</strong> Data cleaning, dashboard design, and presentation.</div>
+            <a href="#" class="btn">📊 View Dashboard</a>
+        </div>
+    </section>
+
+    <!-- SECTION 5: RESUME -->
+    <section id="resume">
+        <h2>Resume / CV</h2>
+        <p>Download my full resume below:</p>
+        <a href="#" class="btn">📄 Download Resume (PDF)</a>
+        <p style="margin-top: 15px;"><strong>Quick summary:</strong> Business Analytics student with Python, SQL, and Tableau skills. Completed 3 data projects and 1 internship.</p>
+    </section>
+
+    <!-- SECTION 6: CONTACT -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <div class="contact-info">
+            📧 <strong>Email:</strong> ceseon.season@university.edu<br>
+            🔗 <strong>LinkedIn:</strong> <a href="#">linkedin.com/in/ceseonseason</a><br>
+            🐙 <strong>GitHub:</strong> <a href="#">github.com/cesonseason</a>
+        </div>
+    </section>
+</div>
+
+<footer>
+    © 2025 Ceseon Season — Job-Seeking Portfolio
+</footer>
+
 </body>
 </html>
