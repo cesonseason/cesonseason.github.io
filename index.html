@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Lam Chi Chon | Data Science Portfolio</title>
+    <title>Lam Chi Chon | CV / Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -19,7 +19,6 @@
             min-height: 100vh;
         }
 
-        /* 自定义滚动条 */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -34,7 +33,6 @@
             background: #ff6b6b;
         }
 
-        /* 导航栏 - 毛玻璃效果 */
         nav {
             background: rgba(10, 10, 20, 0.8);
             backdrop-filter: blur(12px);
@@ -57,13 +55,11 @@
             padding: 0.5rem 1.2rem;
             border-radius: 40px;
             transition: all 0.3s ease;
-            letter-spacing: 0.5px;
         }
         nav a:hover {
             background: linear-gradient(135deg, #00d9ff, #ff6b6b);
             color: #0a0a0a;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 217, 255, 0.3);
         }
 
         .container {
@@ -72,7 +68,6 @@
             padding: 2rem 1.5rem;
         }
 
-        /* 卡片 - 毛玻璃效果 + 发光边框 */
         section {
             background: rgba(20, 20, 40, 0.7);
             backdrop-filter: blur(10px);
@@ -86,7 +81,6 @@
         }
         section:hover {
             border-color: rgba(0, 217, 255, 0.5);
-            box-shadow: 0 8px 32px rgba(0, 217, 255, 0.1);
         }
 
         h1 {
@@ -96,7 +90,6 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            letter-spacing: 1px;
         }
         h2 {
             font-size: 1.8rem;
@@ -110,7 +103,6 @@
             color: #ff6b6b;
         }
 
-        /* Home 区域 - 带头像 */
         .home-wrapper {
             display: flex;
             flex-wrap: wrap;
@@ -136,7 +128,6 @@
         }
         .avatar-img:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 40px rgba(0, 217, 255, 0.5);
         }
         @media (max-width: 700px) {
             .home-wrapper {
@@ -146,37 +137,28 @@
             h1 { font-size: 2.2rem; }
         }
 
-        .headline-box {
-            background: rgba(0, 217, 255, 0.1);
-            padding: 1.5rem;
-            border-radius: 24px;
-            margin: 1rem 0;
-            border: 1px solid rgba(0, 217, 255, 0.3);
-        }
-        .positioning {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #00d9ff;
-            margin-bottom: 0.75rem;
-        }
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.7rem;
-            margin-top: 1rem;
-        }
-        .tag {
+        .title-badge {
+            display: inline-block;
             background: linear-gradient(135deg, #00d9ff, #0099cc);
             color: #0a0a0a;
             padding: 0.3rem 1rem;
             border-radius: 40px;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: 600;
-            transition: all 0.3s ease;
+            margin-top: 0.5rem;
         }
-        .tag:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 217, 255, 0.4);
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .info-item {
+            background: rgba(10, 10, 20, 0.5);
+            padding: 0.8rem;
+            border-radius: 16px;
+            border-left: 2px solid #00d9ff;
         }
 
         .skills-grid {
@@ -250,7 +232,6 @@
         .btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0, 217, 255, 0.4);
-            background: linear-gradient(135deg, #ff6b6b, #ff4757);
         }
 
         .contact-info {
@@ -274,32 +255,6 @@
             font-size: 0.85rem;
             border-top: 1px solid rgba(0, 217, 255, 0.2);
         }
-
-        /* 打字机效果 */
-        .typing {
-            font-size: 1.2rem;
-            border-right: 2px solid #00d9ff;
-            white-space: nowrap;
-            overflow: hidden;
-            width: 0;
-            animation: typing 3s steps(40, end) forwards, blink 0.8s infinite;
-        }
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-        @keyframes blink {
-            from, to { border-color: transparent; }
-            50% { border-color: #00d9ff; }
-        }
-        @media (max-width: 700px) {
-            .typing {
-                white-space: normal;
-                border-right: none;
-                animation: none;
-                width: 100%;
-            }
-        }
     </style>
 </head>
 <body>
@@ -309,28 +264,21 @@
     <a href="#about">👤 About Me</a>
     <a href="#skills">⚙️ Skills</a>
     <a href="#projects">📁 Projects</a>
-    <a href="#resume">📄 Resume</a>
+    <a href="#education">🎓 Education</a>
     <a href="#contact">📞 Contact</a>
 </nav>
 
 <div class="container">
-    <!-- ========== SECTION 1: HOME ========== -->
+    <!-- ========== SECTION 1: HOME / PROFILE ========== -->
     <section id="home">
         <div class="home-wrapper">
             <div class="home-content">
                 <h1>Lam Chi Chon<br><span style="font-size: 1.2rem; color: #ccc;">林子竣</span></h1>
-                <div class="headline-box">
-                    <div class="positioning">🎯 Seeking Data Analyst Internship | Data Science Graduate May 2026</div>
-                    <div class="typing">Master's student in Data Science | Ex-Physics Researcher | Award-winning Fencer</div>
-                    <div class="tags">
-                        <span class="tag">Data Analytics</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">SQL</span>
-                        <span class="tag">Tableau</span>
-                        <span class="tag">Machine Learning</span>
-                        <span class="tag">Deep Learning</span>
-                        <span class="tag">Database Design</span>
-                    </div>
+                <div class="title-badge">📊 Data Science | 🔬 Physics Research | ⚔️ Fencing Athlete</div>
+                <div class="info-grid" style="margin-top: 1.5rem;">
+                    <div class="info-item">🎂 14 March 2003</div>
+                    <div class="info-item">📍 Macau / Hong Kong</div>
+                    <div class="info-item">🌐 Chinese (Fluent) | English (Fluent) | French (Basic)</div>
                 </div>
             </div>
             <div class="home-avatar">
@@ -342,8 +290,6 @@
     <!-- ========== SECTION 2: ABOUT ME ========== -->
     <section id="about">
         <h2>📖 About Me</h2>
-        <p><strong>🎓 Education:</strong> M.Sc. in Data Science, Lingnan University, Hong Kong — Expected May 2026<br>
-        B.Sc. in Applied Physics & Chemistry, University of Macau — Completed May 2025</p>
         <p>I am a Data Science master's student at Lingnan University with a Bachelor's degree in Applied Physics & Chemistry from the University of Macau. My physics background gives me strong analytical and problem-solving skills, which I am now applying to data science. I have hands-on experience in machine learning, deep learning, database management, and data mining through multiple academic projects.</p>
         <ul style="margin-top: 15px; margin-left: 25px;">
             <li>🧠 <strong>Analytical Thinking</strong> — Physics research background</li>
@@ -383,7 +329,7 @@
 
     <!-- ========== SECTION 4: PROJECTS ========== -->
     <section id="projects">
-        <h2>📁 Featured Projects</h2>
+        <h2>📁 Projects</h2>
 
         <div class="project-card">
             <div class="project-title">💳 Credit Card Fraud Detection <span class="badge">ML | Group</span></div>
@@ -397,7 +343,7 @@
         <div class="project-card">
             <div class="project-title">🐦 Social Media Sentiment Analysis <span class="badge">DL | Group</span></div>
             <div class="project-detail"><strong>Problem:</strong> Automated sentiment analysis for Weibo posts.</div>
-            <div class="project-detail"><strong>Approach:</strong> LSTM + Word2Vec, hyperparameter tuning (batch size, learning rate).</div>
+            <div class="project-detail"><strong>Approach:</strong> LSTM + Word2Vec, hyperparameter tuning.</div>
             <div class="project-detail"><strong>Outcome:</strong> 74.58% test accuracy on 3-class sentiment.</div>
             <div class="project-detail"><strong>My Role:</strong> Data preprocessing, segmentation, stop-word removal.</div>
             <a href="#" class="btn">🔗 GitHub</a>
@@ -415,7 +361,7 @@
         <div class="project-card">
             <div class="project-title">⚡ Data Center Energy Prediction <span class="badge">DM | Group</span></div>
             <div class="project-detail"><strong>Problem:</strong> Predict renewable energy adoption in AI data centers.</div>
-            <div class="project-detail"><strong>Approach:</strong> Gradient Boosting, feature selection (consensus score), grouped validation.</div>
+            <div class="project-detail"><strong>Approach:</strong> Gradient Boosting, feature selection, grouped validation.</div>
             <div class="project-detail"><strong>Outcome:</strong> R² 0.784, top predictors: internet penetration, green initiatives.</div>
             <div class="project-detail"><strong>My Role:</strong> Documentation, integrity checks, report writing.</div>
             <a href="#" class="btn">🔗 GitHub</a>
@@ -431,34 +377,36 @@
         </div>
     </section>
 
-    <!-- ========== SECTION 5: RESUME ========== -->
-    <section id="resume">
-        <h2>📄 Resume & Awards</h2>
-        <p>Download my full resume below:</p>
-        <a href="#" class="btn">📥 Download Resume (PDF)</a>
+    <!-- ========== SECTION 5: EDUCATION ========== -->
+    <section id="education">
+        <h2>🎓 Education</h2>
+        <div class="project-card">
+            <div class="project-title">🎓 Master of Science in Data Science <span class="badge">2025 - Present</span></div>
+            <div class="project-detail"><strong>Institution:</strong> Lingnan University, Hong Kong</div>
+            <div class="project-detail"><strong>Expected Graduation:</strong> May 2026</div>
+        </div>
+        <div class="project-card">
+            <div class="project-title">🔬 Bachelor of Science in Applied Physics & Chemistry <span class="badge">2021 - 2025</span></div>
+            <div class="project-detail"><strong>Institution:</strong> University of Macau</div>
+            <div class="project-detail"><strong>Thesis:</strong> Nb₂O₅:TiO₂ Electrochromic & Battery Material</div>
+        </div>
+        <div class="project-card">
+            <div class="project-title">📚 High School <span class="badge">2019 - 2021</span></div>
+            <div class="project-detail">Ruthin School (UK) | Pui Ching Middle School (Macau)</div>
+        </div>
 
-        <h3 style="margin-top: 25px;">🏆 Fencing Awards</h3>
+        <h3 style="margin-top: 20px;">🏆 Awards</h3>
         <ul style="margin-left: 25px;">
             <li>⚔️ <strong>2025</strong> — U23 Asian Fencing Championships (28th Place)</li>
             <li>⚔️ <strong>2024</strong> — Macau Fencing Ranking Tournament, Men's Epee (Runner-up)</li>
-            <li>⚔️ <strong>2022</strong> — Macau Fencing Referee Level 3 (Foil, Epee, Sabre)</li>
-        </ul>
-
-        <h3>🏅 Academic Awards</h3>
-        <ul style="margin-left: 25px;">
             <li>🏆 <strong>2024</strong> — National University Physics Experiment Competition (First Prize)</li>
-        </ul>
-
-        <h3>📜 Certifications</h3>
-        <ul style="margin-left: 25px;">
-            <li>Macau Fencing Referee Level 3 (Foil, Epee, Sabre) — 2022</li>
-            <li>Bachelor's Degree Certificate — University of Macau, 2025</li>
+            <li>⚔️ <strong>2022</strong> — Macau Fencing Referee Level 3 (Foil, Epee, Sabre)</li>
         </ul>
     </section>
 
     <!-- ========== SECTION 6: CONTACT ========== -->
     <section id="contact">
-        <h2>📬 Contact Me</h2>
+        <h2>📬 Contact</h2>
         <div class="contact-info">
             📧 <strong>Email:</strong> cesonseason@gmail.com<br>
             📞 <strong>Phone:</strong> +853 63281260 / +86 17205909032<br>
@@ -466,12 +414,11 @@
             🐙 <strong>GitHub:</strong> <a href="#">github.com/cesonseason</a><br>
             📍 <strong>Location:</strong> Macau / Hong Kong
         </div>
-        <p style="margin-top: 1rem;">✨ Open for internship opportunities starting Summer 2026 ✨</p>
     </section>
 </div>
 
 <footer>
-    © 2025 Lam Chi Chon (林子竣) — Data Science Portfolio | Built with 🖤 for Web3
+    © 2025 Lam Chi Chon (林子竣) — CV / Portfolio
 </footer>
 
 </body>
