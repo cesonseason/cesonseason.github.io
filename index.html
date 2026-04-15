@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ceseon Season - Data Analytics Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Lam Chi Chon - Data Science Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -11,132 +11,173 @@
             box-sizing: border-box;
         }
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
             line-height: 1.6;
-            background: #f4f4f4;
-            color: #333;
+            background: #f4f7fc;
+            color: #1e2a3e;
+            scroll-behavior: smooth;
         }
         nav {
-            background: #2c3e50;
+            background: #0f2b3d;
             color: white;
-            padding: 1rem;
+            padding: 1rem 2rem;
             position: sticky;
             top: 0;
-            text-align: center;
+            z-index: 100;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         nav a {
-            color: white;
+            color: #f0f9ff;
             text-decoration: none;
-            margin: 0 15px;
-            padding: 5px 10px;
+            font-weight: 600;
+            padding: 0.3rem 0.8rem;
+            border-radius: 30px;
+            transition: background 0.2s;
         }
         nav a:hover {
-            background: #34495e;
-            border-radius: 5px;
+            background: #2c5a74;
         }
         .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
         }
         section {
             background: white;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            padding: 25px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 28px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            margin-bottom: 2.5rem;
+            padding: 2rem 2rem;
+            scroll-margin-top: 80px;
         }
         h1 {
-            color: #2c3e50;
-            margin-bottom: 10px;
+            font-size: 2.4rem;
+            margin-bottom: 0.5rem;
+            color: #0f2b3d;
         }
         h2 {
-            color: #2c3e50;
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+            font-size: 1.8rem;
+            border-left: 6px solid #2c7da0;
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+            color: #1e4a6b;
+        }
+        h3 {
+            margin: 1rem 0 0.5rem 0;
+            color: #2c5a74;
         }
         .headline-box {
-            background: #ecf0f1;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 15px;
+            background: #e6f0f5;
+            padding: 1.5rem;
+            border-radius: 24px;
+            margin: 1rem 0;
         }
         .positioning {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 10px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #0f3b4f;
+            margin-bottom: 0.75rem;
         }
         .tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 15px;
+            gap: 0.7rem;
+            margin-top: 1rem;
         }
         .tag {
-            background: #3498db;
+            background: #2c7da0;
             color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 500;
         }
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            gap: 1.5rem;
+            margin-top: 1rem;
         }
         .skill-cat {
-            background: #ecf0f1;
-            padding: 15px;
-            border-radius: 10px;
+            background: #f9fafc;
+            padding: 1rem 1.2rem;
+            border-radius: 20px;
+            border-left: 4px solid #2c7da0;
+        }
+        .skill-cat h3 {
+            margin-top: 0;
         }
         .project-card {
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
+            background: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 24px;
+            padding: 1.3rem 1.5rem;
+            margin-bottom: 1.8rem;
+            transition: transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
         }
         .project-title {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 15px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            color: #0f2b3d;
+            border-bottom: 2px solid #cbd5e1;
+            padding-bottom: 0.4rem;
+            margin-bottom: 1rem;
         }
         .project-detail {
-            margin: 10px 0;
-            padding-left: 15px;
-            border-left: 3px solid #3498db;
+            margin: 0.6rem 0;
+            padding-left: 0.5rem;
+            border-left: 3px solid #a0c4d9;
+        }
+        .badge {
+            background: #e2eaf1;
+            font-weight: normal;
+            font-size: 0.85rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 30px;
         }
         .btn {
             display: inline-block;
-            background: #3498db;
+            background: #2c7da0;
             color: white;
-            padding: 8px 16px;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
             text-decoration: none;
-            border-radius: 5px;
-            margin-top: 10px;
-            margin-right: 10px;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            margin-right: 0.5rem;
         }
         .btn:hover {
-            background: #2980b9;
+            background: #1e5a73;
         }
         .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
             font-size: 1.1rem;
-            line-height: 2;
         }
         footer {
             text-align: center;
-            padding: 20px;
-            color: #7f8c8d;
+            padding: 1.5rem;
+            color: #5b6e7c;
+            font-size: 0.85rem;
         }
-        @media (max-width: 600px) {
-            nav a {
-                display: inline-block;
-                margin: 5px;
+        @media (max-width: 700px) {
+            nav {
+                gap: 0.8rem;
             }
             section {
-                padding: 15px;
+                padding: 1.3rem;
+            }
+            .positioning {
+                font-size: 1.2rem;
             }
         }
     </style>
@@ -148,106 +189,138 @@
     <a href="#about">About Me</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
-    <a href="#resume">Resume</a>
+    <a href="#resume">Resume/CV</a>
     <a href="#contact">Contact</a>
 </nav>
 
 <div class="container">
-    <!-- SECTION 1: HOME -->
+    <!-- ========== SECTION 1: HOME / HEADLINE ========== -->
     <section id="home">
-        <h1>Ceseon Season</h1>
+        <h1>Lam Chi Chon (林子竣)</h1>
         <div class="headline-box">
-            <div class="positioning">🎯 Seeking Data Analyst Internship | Business Analytics Graduate May 2026</div>
-            <p>Passionate data analytics student seeking summer 2026 internship in business intelligence and data analytics.</p>
+            <div class="positioning">🎯 Seeking Data Analyst Internship | Data Science Graduate May 2026</div>
+            <p>Master's student in Data Science at Lingnan University with strong background in physics research and data analysis. Seeking summer 2026 internship in data analytics or business intelligence.</p>
             <div class="tags">
                 <span class="tag">Data Analytics</span>
                 <span class="tag">Python</span>
                 <span class="tag">SQL</span>
                 <span class="tag">Tableau</span>
-                <span class="tag">Business Intelligence</span>
+                <span class="tag">Data Science</span>
+                <span class="tag">Machine Learning</span>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 2: ABOUT ME -->
+    <!-- ========== SECTION 2: ABOUT ME ========== -->
     <section id="about">
         <h2>About Me</h2>
-        <p><strong>Education:</strong> B.Sc. in Business Analytics — Expected May 2026</p>
-        <p>I am a passionate Business Analytics student with strong interest in turning data into actionable insights. I have experience in Python, SQL, and data visualization. I am looking for an internship where I can apply my analytical skills to solve real business problems.</p>
+        <p><strong>Education:</strong> M.Sc. in Data Science, Lingnan University, Hong Kong — Expected May 2026<br>
+        B.Sc. in Applied Physics & Chemistry, University of Macau — Completed May 2025</p>
+        <p>I am a Data Science master's student at Lingnan University with a Bachelor's degree in Applied Physics & Chemistry from the University of Macau. My physics background gives me strong analytical and problem-solving skills, which I am now applying to data science. I am passionate about turning data into actionable insights and seeking an internship where I can contribute to real-world business problems.</p>
         <ul style="margin-top: 15px; margin-left: 25px;">
-            <li><strong>Strength 1:</strong> Data storytelling and visualization</li>
-            <li><strong>Strength 2:</strong> Statistical analysis and problem-solving</li>
-            <li><strong>Strength 3:</strong> Team collaboration and communication</li>
+            <li><strong>Strength 1:</strong> Strong analytical thinking from physics research background</li>
+            <li><strong>Strength 2:</strong> Data analysis and visualization (Python, Tableau, Excel)</li>
+            <li><strong>Strength 3:</strong> Bilingual communication (English, Chinese) and team collaboration</li>
+            <li><strong>Strength 4:</strong> Award-winning researcher with first-place national physics competition</li>
         </ul>
     </section>
 
-    <!-- SECTION 3: SKILLS -->
+    <!-- ========== SECTION 3: SKILLS ========== -->
     <section id="skills">
         <h2>Skills</h2>
         <div class="skills-grid">
             <div class="skill-cat">
                 <h3>💻 Technical Skills</h3>
-                <p>Python, SQL, Excel, Statistics, Data Visualization, Machine Learning basics</p>
+                <p>Python (pandas, scikit-learn), SQL, Excel, Statistics, Machine Learning, Data Visualization, OriginLab, Weka</p>
             </div>
             <div class="skill-cat">
-                <h3>📊 Business Skills</h3>
-                <p>Problem framing, A/B testing, Metrics definition, Data storytelling, Reporting</p>
+                <h3>📊 Business & Data Skills</h3>
+                <p>Problem framing, Data storytelling, Reporting, Data cleaning, Exploratory Data Analysis (EDA), Dashboard creation</p>
             </div>
             <div class="skill-cat">
-                <h3>🔧 Tools</h3>
-                <p>pandas, scikit-learn, Tableau, Power BI, Git, Jupyter Notebook</p>
+                <h3>🔧 Tools & Platforms</h3>
+                <p>PyCharm, Google Colab, Tableau, Jupyter Notebook, Git, Microsoft Office, Canva, SolidWorks</p>
+            </div>
+            <div class="skill-cat">
+                <h3>🗣️ Languages & AI</h3>
+                <p>Chinese (Cantonese, Mandarin - Fluent), English (Fluent), French (Basic), ChatGPT, Copilot, DeepSeek, Ollama</p>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 4: PROJECTS -->
+    <!-- ========== SECTION 4: PROJECTS (PORTFOLIO) ========== -->
     <section id="projects">
-        <h2>Projects</h2>
+        <h2>Projects Portfolio</h2>
 
-        <!-- PROJECT 1 -->
+        <!-- PROJECT 1: Bachelor's Thesis (Individual) -->
         <div class="project-card">
-            <div class="project-title">📊 Customer Churn Prediction — Jan 2025 | Individual</div>
-            <div class="project-detail"><strong>Problem:</strong> Predict which customers are likely to churn to help business take preventive actions.</div>
+            <div class="project-title">
+                <span>🔬 Nb₂O₅:TiO₂ Electrochromic & Battery Material</span>
+                <span class="badge">2025 | Individual</span>
+            </div>
+            <div class="project-detail"><strong>Problem:</strong> Traditional TiNb₂O₇ requires high-temperature annealing that is incompatible with glass substrates for smart window applications.</div>
+            <div class="project-detail"><strong>Data:</strong> Experimental data from material characterization tests, including visible light modulation rates and energy storage capacity measurements.</div>
+            <div class="project-detail"><strong>Approach:</strong> Developed low-temperature Nb₂O₅:TiO₂ dual-function film. Used Nb-Ti electronic coupling effect to optimize performance. Conducted material synthesis, data measurement, and results analysis.</div>
+            <div class="project-detail"><strong>Outcome/Impact:</strong> Achieved 40% visible light modulation and 0.8mAh/cm² energy storage at temperatures below 350°C, providing new solution for smart window industrialization.</div>
+            <div class="project-detail"><strong>My Contribution:</strong> Full project lifecycle - topic selection, experimental design, data measurement, results analysis, and thesis writing. Advisor: Prof. Wu Jiawei.</div>
+            <a href="#" class="btn">📄 View Thesis Abstract</a>
+        </div>
+
+        <!-- PROJECT 2: Customer Churn Prediction -->
+        <div class="project-card">
+            <div class="project-title">
+                <span>📊 Customer Churn Prediction for Telecom</span>
+                <span class="badge">Jan 2025 | Individual</span>
+            </div>
+            <div class="project-detail"><strong>Problem:</strong> Predict which telecom customers are likely to churn to help business take preventive actions.</div>
             <div class="project-detail"><strong>Data:</strong> Telecom customer dataset with 7,000 records, 20 features including tenure, monthly charges, contract type.</div>
-            <div class="project-detail"><strong>Approach:</strong> Used Python pandas for EDA, built Random Forest and XGBoost models.</div>
-            <div class="project-detail"><strong>Outcome:</strong> Achieved 85% accuracy, identified top 3 churn factors.</div>
-            <div class="project-detail"><strong>My Contribution:</strong> Full project lifecycle - data cleaning, modeling, and presentation.</div>
+            <div class="project-detail"><strong>Approach:</strong> Used Python (pandas) for EDA and data cleaning. Built Random Forest and XGBoost models. Evaluated using accuracy and ROC-AUC.</div>
+            <div class="project-detail"><strong>Outcome/Impact:</strong> Achieved 85% accuracy, identified top 3 churn factors (month-to-month contracts, no online security, low tenure).</div>
+            <div class="project-detail"><strong>My Contribution:</strong> Full project lifecycle - data cleaning, feature engineering, model building, and presentation.</div>
             <a href="#" class="btn">🔗 View Code</a>
         </div>
 
-        <!-- PROJECT 2 -->
+        <!-- PROJECT 3: Fencing Data Analytics (Optional - shows your unique background) -->
         <div class="project-card">
-            <div class="project-title">📈 Sales Dashboard for Retail — Sep 2024 | Group Project</div>
-            <div class="project-detail"><strong>Problem:</strong> Retail company needed an interactive dashboard to track sales performance.</div>
-            <div class="project-detail"><strong>Data:</strong> Sales transaction data from 2023-2024, 50,000+ records with product, region, and sales amount.</div>
-            <div class="project-detail"><strong>Approach:</strong> Cleaned data with Python, created interactive Tableau dashboard with KPIs and filters.</div>
-            <div class="project-detail"><strong>Outcome:</strong> Dashboard helped identify top products and seasonal trends, leading to 10% sales increase.</div>
-            <div class="project-detail"><strong>My Contribution:</strong> Data cleaning, dashboard design, and presentation.</div>
+            <div class="project-title">
+                <span>⚡ Fencing Performance Analytics Dashboard</span>
+                <span class="badge">2024 | Individual</span>
+            </div>
+            <div class="project-detail"><strong>Problem:</strong> As a competitive fencer, wanted to analyze match performance data to identify strengths and weaknesses.</div>
+            <div class="project-detail"><strong>Data:</strong> Personal competition records from 2024 Macau Fencing Ranking Tournament (Runner-up) and training session metrics.</div>
+            <div class="project-detail"><strong>Approach:</strong> Collected and organized match statistics, created Tableau dashboard to visualize performance trends, point distribution, and opponent analysis.</div>
+            <div class="project-detail"><strong>Outcome/Impact:</strong> Identified key areas for improvement leading to better tactical decisions in subsequent competitions.</div>
+            <div class="project-detail"><strong>My Contribution:</strong> Data collection, dashboard design, and performance analysis.</div>
             <a href="#" class="btn">📊 View Dashboard</a>
         </div>
     </section>
 
-    <!-- SECTION 5: RESUME -->
+    <!-- ========== SECTION 5: RESUME / CV ========== -->
     <section id="resume">
         <h2>Resume / CV</h2>
-        <p>Download my full resume below:</p>
+        <p>Download my full resume below (PDF):</p>
         <a href="#" class="btn">📄 Download Resume (PDF)</a>
-        <p style="margin-top: 15px;"><strong>Quick summary:</strong> Business Analytics student with Python, SQL, and Tableau skills. Completed 3 data projects and 1 internship.</p>
+        <p style="margin-top: 15px;"><strong>Quick summary:</strong> Data Science master's student at Lingnan University. Bachelor's in Applied Physics from University of Macau. Award-winning researcher (National Physics Competition First Prize). Experienced fencing coach and athlete. Skills in Python, SQL, Tableau, and data visualization. Bilingual (English & Chinese).</p>
+        <p style="margin-top: 10px;"><strong>Awards:</strong> 2024 National University Physics Experiment Competition - First Prize | 2024 Macau Fencing Ranking Tournament - Runner-up | U23 Asian Fencing Championships 2025 - 28th Place</p>
+        <p style="margin-top: 10px;"><strong>Certifications:</strong> Macau Fencing Referee Level 3 (Foil, Epee, Sabre) | Bachelor's Degree - University of Macau</p>
     </section>
 
-    <!-- SECTION 6: CONTACT -->
+    <!-- ========== SECTION 6: CONTACT ========== -->
     <section id="contact">
-        <h2>Contact</h2>
+        <h2>Contact Me</h2>
         <div class="contact-info">
-            📧 <strong>Email:</strong> ceseon.season@university.edu<br>
-            🔗 <strong>LinkedIn:</strong> <a href="#">linkedin.com/in/ceseonseason</a><br>
-            🐙 <strong>GitHub:</strong> <a href="#">github.com/cesonseason</a>
+            📧 <strong>Email:</strong> cesonseason@gmail.com<br>
+            📞 <strong>Phone:</strong> +853 63281260 / +86 17205909032<br>
+            🔗 <strong>LinkedIn:</strong> <a href="#">linkedin.com/in/lam-chi-chon</a><br>
+            🐙 <strong>GitHub:</strong> <a href="#">github.com/cesonseason</a><br>
+            📍 <strong>Location:</strong> Macau / Hong Kong
         </div>
+        <p style="margin-top: 1rem;">Feel free to reach out for internship opportunities or collaboration.</p>
     </section>
 </div>
 
 <footer>
-    © 2025 Ceseon Season — Job-Seeking Portfolio
+    © 2025 Lam Chi Chon (林子竣) — Data Science Portfolio | Last updated April 2025
 </footer>
 
 </body>
