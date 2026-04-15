@@ -3,22 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Lam Chi Chon - Data Science Portfolio</title>
+    <title>Lam Chi Chon | Data Science Portfolio</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
-            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            line-height: 1.6;
-            background: #f4f7fc;
-            color: #1e2a3e;
+            font-family: 'Segoe UI', 'Poppins', 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            color: #e0e0e0;
             scroll-behavior: smooth;
+            min-height: 100vh;
         }
+
+        /* 自定义滚动条 */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a1a2e;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #00d9ff;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff6b6b;
+        }
+
+        /* 导航栏 - 毛玻璃效果 */
         nav {
-            background: #0f2b3d;
+            background: rgba(10, 10, 20, 0.8);
+            backdrop-filter: blur(12px);
             color: white;
             padding: 1rem 2rem;
             position: sticky;
@@ -28,58 +47,116 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 1.5rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            border-bottom: 1px solid rgba(0, 217, 255, 0.3);
         }
         nav a {
-            color: #f0f9ff;
+            color: #f0f0f0;
             text-decoration: none;
             font-weight: 600;
-            padding: 0.3rem 0.8rem;
-            border-radius: 30px;
-            transition: background 0.2s;
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
         }
         nav a:hover {
-            background: #2c5a74;
+            background: linear-gradient(135deg, #00d9ff, #ff6b6b);
+            color: #0a0a0a;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 217, 255, 0.3);
         }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem 1.5rem;
         }
+
+        /* 卡片 - 毛玻璃效果 + 发光边框 */
         section {
-            background: white;
+            background: rgba(20, 20, 40, 0.7);
+            backdrop-filter: blur(10px);
             border-radius: 28px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
             margin-bottom: 2.5rem;
             padding: 2rem 2rem;
             scroll-margin-top: 80px;
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            transition: all 0.3s ease;
         }
+        section:hover {
+            border-color: rgba(0, 217, 255, 0.5);
+            box-shadow: 0 8px 32px rgba(0, 217, 255, 0.1);
+        }
+
         h1 {
-            font-size: 2.4rem;
+            font-size: 3rem;
             margin-bottom: 0.5rem;
-            color: #0f2b3d;
+            background: linear-gradient(135deg, #00d9ff, #ff6b6b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 1px;
         }
         h2 {
             font-size: 1.8rem;
-            border-left: 6px solid #2c7da0;
+            border-left: 4px solid #00d9ff;
             padding-left: 1rem;
             margin-bottom: 1.5rem;
-            color: #1e4a6b;
+            color: #00d9ff;
         }
         h3 {
             margin: 1rem 0 0.5rem 0;
-            color: #2c5a74;
+            color: #ff6b6b;
         }
+
+        /* Home 区域 - 带头像 */
+        .home-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .home-content {
+            flex: 2;
+        }
+        .home-avatar {
+            flex: 1;
+            text-align: center;
+        }
+        .avatar-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #00d9ff;
+            box-shadow: 0 0 30px rgba(0, 217, 255, 0.3);
+            transition: transform 0.3s ease;
+        }
+        .avatar-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(0, 217, 255, 0.5);
+        }
+        @media (max-width: 700px) {
+            .home-wrapper {
+                flex-direction: column;
+                text-align: center;
+            }
+            h1 { font-size: 2.2rem; }
+        }
+
         .headline-box {
-            background: #e6f0f5;
+            background: rgba(0, 217, 255, 0.1);
             padding: 1.5rem;
             border-radius: 24px;
             margin: 1rem 0;
+            border: 1px solid rgba(0, 217, 255, 0.3);
         }
         .positioning {
             font-size: 1.5rem;
             font-weight: 600;
-            color: #0f3b4f;
+            color: #00d9ff;
             margin-bottom: 0.75rem;
         }
         .tags {
@@ -89,13 +166,19 @@
             margin-top: 1rem;
         }
         .tag {
-            background: #2c7da0;
-            color: white;
+            background: linear-gradient(135deg, #00d9ff, #0099cc);
+            color: #0a0a0a;
             padding: 0.3rem 1rem;
             border-radius: 40px;
             font-size: 0.85rem;
-            font-weight: 500;
+            font-weight: 600;
+            transition: all 0.3s ease;
         }
+        .tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 217, 255, 0.4);
+        }
+
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -103,81 +186,118 @@
             margin-top: 1rem;
         }
         .skill-cat {
-            background: #f9fafc;
+            background: rgba(10, 10, 20, 0.6);
             padding: 1rem 1.2rem;
             border-radius: 20px;
-            border-left: 4px solid #2c7da0;
+            border-left: 3px solid #00d9ff;
+            transition: all 0.3s ease;
         }
-        .skill-cat h3 {
-            margin-top: 0;
+        .skill-cat:hover {
+            transform: translateX(5px);
+            background: rgba(0, 217, 255, 0.1);
         }
+
         .project-card {
-            background: #ffffff;
-            border: 1px solid #dee2e6;
+            background: rgba(10, 10, 20, 0.6);
+            border: 1px solid rgba(0, 217, 255, 0.2);
             border-radius: 24px;
             padding: 1.3rem 1.5rem;
             margin-bottom: 1.8rem;
-            transition: transform 0.1s ease;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+            transition: all 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: #00d9ff;
+            box-shadow: 0 10px 30px rgba(0, 217, 255, 0.15);
         }
         .project-title {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 700;
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
-            color: #0f2b3d;
-            border-bottom: 2px solid #cbd5e1;
+            color: #00d9ff;
+            border-bottom: 1px solid rgba(0, 217, 255, 0.3);
             padding-bottom: 0.4rem;
             margin-bottom: 1rem;
         }
         .project-detail {
             margin: 0.6rem 0;
             padding-left: 0.5rem;
-            border-left: 3px solid #a0c4d9;
+            border-left: 2px solid #ff6b6b;
         }
         .badge {
-            background: #e2eaf1;
+            background: rgba(255, 107, 107, 0.2);
             font-weight: normal;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             padding: 0.2rem 0.6rem;
-            border-radius: 30px;
+            border-radius: 20px;
+            color: #ff6b6b;
         }
         .btn {
             display: inline-block;
-            background: #2c7da0;
-            color: white;
+            background: linear-gradient(135deg, #00d9ff, #0099cc);
+            color: #0a0a0a;
             padding: 0.5rem 1rem;
             border-radius: 40px;
             text-decoration: none;
             font-size: 0.85rem;
+            font-weight: 600;
             margin-top: 0.5rem;
             margin-right: 0.5rem;
+            transition: all 0.3s ease;
         }
         .btn:hover {
-            background: #1e5a73;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 217, 255, 0.4);
+            background: linear-gradient(135deg, #ff6b6b, #ff4757);
         }
+
         .contact-info {
             display: flex;
             flex-direction: column;
             gap: 0.8rem;
             font-size: 1.1rem;
         }
+        .contact-info a {
+            color: #00d9ff;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            color: #ff6b6b;
+        }
+
         footer {
             text-align: center;
             padding: 1.5rem;
-            color: #5b6e7c;
+            color: #888;
             font-size: 0.85rem;
+            border-top: 1px solid rgba(0, 217, 255, 0.2);
+        }
+
+        /* 打字机效果 */
+        .typing {
+            font-size: 1.2rem;
+            border-right: 2px solid #00d9ff;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+            animation: typing 3s steps(40, end) forwards, blink 0.8s infinite;
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes blink {
+            from, to { border-color: transparent; }
+            50% { border-color: #00d9ff; }
         }
         @media (max-width: 700px) {
-            nav {
-                gap: 0.8rem;
-            }
-            section {
-                padding: 1.3rem;
-            }
-            .positioning {
-                font-size: 1.2rem;
+            .typing {
+                white-space: normal;
+                border-right: none;
+                animation: none;
+                width: 100%;
             }
         }
     </style>
@@ -185,59 +305,66 @@
 <body>
 
 <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About Me</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#resume">Resume/CV</a>
-    <a href="#contact">Contact</a>
+    <a href="#home">🏠 Home</a>
+    <a href="#about">👤 About Me</a>
+    <a href="#skills">⚙️ Skills</a>
+    <a href="#projects">📁 Projects</a>
+    <a href="#resume">📄 Resume</a>
+    <a href="#contact">📞 Contact</a>
 </nav>
 
 <div class="container">
-    <!-- ========== SECTION 1: HOME / HEADLINE ========== -->
+    <!-- ========== SECTION 1: HOME ========== -->
     <section id="home">
-        <h1>Lam Chi Chon (林子竣)</h1>
-        <div class="headline-box">
-            <div class="positioning">🎯 Seeking Data Analyst Internship | Data Science Graduate May 2026</div>
-            <p>Master's student in Data Science at Lingnan University with strong background in physics research, machine learning, and database management. Seeking summer 2026 internship in data analytics or business intelligence.</p>
-            <div class="tags">
-                <span class="tag">Data Analytics</span>
-                <span class="tag">Python</span>
-                <span class="tag">SQL</span>
-                <span class="tag">Tableau</span>
-                <span class="tag">Machine Learning</span>
-                <span class="tag">Deep Learning</span>
-                <span class="tag">Database Design</span>
+        <div class="home-wrapper">
+            <div class="home-content">
+                <h1>Lam Chi Chon<br><span style="font-size: 1.2rem; color: #ccc;">林子竣</span></h1>
+                <div class="headline-box">
+                    <div class="positioning">🎯 Seeking Data Analyst Internship | Data Science Graduate May 2026</div>
+                    <div class="typing">Master's student in Data Science | Ex-Physics Researcher | Award-winning Fencer</div>
+                    <div class="tags">
+                        <span class="tag">Data Analytics</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">Tableau</span>
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Deep Learning</span>
+                        <span class="tag">Database Design</span>
+                    </div>
+                </div>
+            </div>
+            <div class="home-avatar">
+                <img src="profile.jpg" alt="Lam Chi Chon" class="avatar-img" onerror="this.src='https://via.placeholder.com/180x180?text=Photo'">
             </div>
         </div>
     </section>
 
     <!-- ========== SECTION 2: ABOUT ME ========== -->
     <section id="about">
-        <h2>About Me</h2>
-        <p><strong>Education:</strong> M.Sc. in Data Science, Lingnan University, Hong Kong — Expected May 2026<br>
+        <h2>📖 About Me</h2>
+        <p><strong>🎓 Education:</strong> M.Sc. in Data Science, Lingnan University, Hong Kong — Expected May 2026<br>
         B.Sc. in Applied Physics & Chemistry, University of Macau — Completed May 2025</p>
-        <p>I am a Data Science master's student at Lingnan University with a Bachelor's degree in Applied Physics & Chemistry from the University of Macau. My physics background gives me strong analytical and problem-solving skills, which I am now applying to data science. I have hands-on experience in machine learning, deep learning, database management, and data mining through multiple academic projects. I am passionate about turning data into actionable insights and seeking an internship where I can contribute to real-world business problems.</p>
+        <p>I am a Data Science master's student at Lingnan University with a Bachelor's degree in Applied Physics & Chemistry from the University of Macau. My physics background gives me strong analytical and problem-solving skills, which I am now applying to data science. I have hands-on experience in machine learning, deep learning, database management, and data mining through multiple academic projects.</p>
         <ul style="margin-top: 15px; margin-left: 25px;">
-            <li><strong>Strength 1:</strong> Strong analytical thinking from physics research background</li>
-            <li><strong>Strength 2:</strong> Machine Learning & Deep Learning (Classification, NLP, Sentiment Analysis)</li>
-            <li><strong>Strength 3:</strong> Database Design & Management (MySQL, ACID transactions, Index optimization)</li>
-            <li><strong>Strength 4:</strong> Bilingual communication (English, Chinese) and team collaboration</li>
-            <li><strong>Strength 5:</strong> Award-winning fencer with international competition experience</li>
+            <li>🧠 <strong>Analytical Thinking</strong> — Physics research background</li>
+            <li>🤖 <strong>ML & Deep Learning</strong> — Classification, NLP, Sentiment Analysis</li>
+            <li>🗄️ <strong>Database Design</strong> — MySQL, ACID transactions, Index optimization</li>
+            <li>🌐 <strong>Bilingual</strong> — English & Chinese (Cantonese, Mandarin)</li>
+            <li>⚔️ <strong>Award-winning Fencer</strong> — International competition experience</li>
         </ul>
     </section>
 
     <!-- ========== SECTION 3: SKILLS ========== -->
     <section id="skills">
-        <h2>Skills</h2>
+        <h2>⚙️ Skills</h2>
         <div class="skills-grid">
             <div class="skill-cat">
                 <h3>💻 Machine Learning & AI</h3>
-                <p>Python (pandas, scikit-learn, XGBoost), NLP (LSTM, Word2Vec), SMOTE, Hyperparameter Tuning, Model Evaluation (AUC, F1, Recall)</p>
+                <p>Python, pandas, scikit-learn, XGBoost, NLP (LSTM, Word2Vec), SMOTE, Model Evaluation (AUC, F1, Recall)</p>
             </div>
             <div class="skill-cat">
                 <h3>🗄️ Database & Data Engineering</h3>
-                <p>MySQL, SQL (joins, transactions, indexing), ACID properties, Database Design (ERD, 3NF), Performance Optimization</p>
+                <p>MySQL, SQL (joins, transactions, indexing), ACID, Database Design (ERD, 3NF), Performance Optimization</p>
             </div>
             <div class="skill-cat">
                 <h3>📊 Data Analysis & Visualization</h3>
@@ -245,7 +372,7 @@
             </div>
             <div class="skill-cat">
                 <h3>🔧 Tools & Platforms</h3>
-                <p>Git, Jupyter Notebook, PyCharm, Google Colab, MySQL Workbench, Excel, PowerPoint, Canva</p>
+                <p>Git, Jupyter, PyCharm, Google Colab, MySQL Workbench, Excel, PowerPoint, Canva</p>
             </div>
             <div class="skill-cat">
                 <h3>🗣️ Languages</h3>
@@ -254,136 +381,84 @@
         </div>
     </section>
 
-    <!-- ========== SECTION 4: PROJECTS (PORTFOLIO) ========== -->
+    <!-- ========== SECTION 4: PROJECTS ========== -->
     <section id="projects">
-        <h2>Projects Portfolio</h2>
+        <h2>📁 Featured Projects</h2>
 
-        <!-- PROJECT 1: Credit Card Fraud Detection (ML Group Project) -->
         <div class="project-card">
-            <div class="project-title">
-                <span>💳 Credit Card Fraud Detection using Machine Learning</span>
-                <span class="badge">2025 | Group Project (6 members)</span>
-            </div>
-            <div class="project-detail"><strong>Problem:</strong> Credit card fraud detection is a core task in financial risk control, constrained by extreme class imbalance (fraud < 0.2% of transactions) and evolving fraudulent behavior.</div>
-            <div class="project-detail"><strong>Data:</strong> Kaggle Credit Card Fraud Detection dataset (284,807 transactions, 31 fields: Time, Amount, 28 PCA-transformed features V1-V28, binary Class label).</div>
-            <div class="project-detail"><strong>Approach:</strong> Built end-to-end ML pipeline: EDA, feature standardization, stratified split, SMOTE for imbalance handling. Trained Logistic Regression, Random Forest, and XGBoost with 5-fold stratified CV and grid search (F1 optimization).</div>
-            <div class="project-detail"><strong>Outcome/Impact:</strong> XGBoost achieved AUC 0.97, F1-score 0.89, Precision 92.5%, Recall 87.1% after SMOTE. Model can intercept >87% fraud while keeping false alarms low.</div>
-            <div class="project-detail"><strong>My Contribution:</strong> Evaluation framework setup, confusion matrix and ROC-based comparison, result validation checks, and report writing.</div>
-            <a href="#" class="btn">🔗 GitHub Repo</a>
+            <div class="project-title">💳 Credit Card Fraud Detection <span class="badge">ML | Group</span></div>
+            <div class="project-detail"><strong>Problem:</strong> Extreme class imbalance (fraud <0.2%) in financial transactions.</div>
+            <div class="project-detail"><strong>Approach:</strong> SMOTE + XGBoost with 5-fold stratified CV.</div>
+            <div class="project-detail"><strong>Outcome:</strong> AUC 0.97, F1 0.89, Recall 87.1%.</div>
+            <div class="project-detail"><strong>My Role:</strong> Evaluation framework, confusion matrix, result validation.</div>
+            <a href="#" class="btn">🔗 GitHub</a>
         </div>
 
-        <!-- PROJECT 2: Social Media Sentiment Analysis (DL Group Project) -->
         <div class="project-card">
-            <div class="project-title">
-                <span>🐦 Social Media Sentiment Analysis with LSTM</span>
-                <span class="badge">2025 | Group Project (6 members)</span>
-            </div>
-            <div class="project-detail"><strong>Problem:</strong> Social media platforms carry rich emotional signals; businesses and governments need automated sentiment analysis for precision marketing and public opinion monitoring.</div>
-            <div class="project-detail"><strong>Data:</strong> 89,140 Weibo hot-list posts collected via crawling, including text, likes, comments, reposts, and blogger information.</div>
-            <div class="project-detail"><strong>Approach:</strong> Built LSTM-based deep learning classifier with Word2Vec embeddings. Compared Cross-Entropy vs MSE loss, tested learning rates (0.1-0.0001) and batch sizes (8-128). Used early stopping to prevent overfitting.</div>
-            <div class="project-detail"><strong>Outcome/Impact:</strong> Achieved 74.58% test accuracy on three-class sentiment (positive/negative/neutral). Cross-Entropy loss outperformed MSE, learning rate 0.001 gave best convergence.</div>
-            <div class="project-detail"><strong>My Contribution:</strong> Data preprocessing, stop-word removal, segmentation, and model evaluation support.</div>
-            <a href="#" class="btn">🔗 GitHub Repo</a>
+            <div class="project-title">🐦 Social Media Sentiment Analysis <span class="badge">DL | Group</span></div>
+            <div class="project-detail"><strong>Problem:</strong> Automated sentiment analysis for Weibo posts.</div>
+            <div class="project-detail"><strong>Approach:</strong> LSTM + Word2Vec, hyperparameter tuning (batch size, learning rate).</div>
+            <div class="project-detail"><strong>Outcome:</strong> 74.58% test accuracy on 3-class sentiment.</div>
+            <div class="project-detail"><strong>My Role:</strong> Data preprocessing, segmentation, stop-word removal.</div>
+            <a href="#" class="btn">🔗 GitHub</a>
         </div>
 
-        <!-- PROJECT 3: Digital Products Trading Platform Database (BM Group Project) -->
         <div class="project-card">
-            <div class="project-title">
-                <span>🛒 Digital Products Trading Platform Database Design</span>
-                <span class="badge">2025 | Group Project (6 members)</span>
-            </div>
-            <div class="project-detail"><strong>Problem:</strong> Online trading platforms for digital products need efficient, reliable DBMS to secure transactions, ensure data consistency, and handle high concurrency.</div>
-            <div class="project-detail"><strong>Approach:</strong> Designed MySQL database with InnoDB engine. Created ER diagram, normalized to 3NF. Implemented ACID transactions for order-payment-license consistency. Designed indexes for query optimization (browsing, order history, bestsellers).</div>
-            <div class="project-detail"><strong>Outcome/Impact:</strong> Achieved <12ms average query latency, 134 TPS write throughput. Zero orphaned records. 95% queries completed within 35ms, meeting <200ms goal.</div>
-            <div class="project-detail"><strong>My Contribution:</strong> Document editing & layout, consistency/integrity checks, and report writing.</div>
-            <a href="#" class="btn">🔗 GitHub Repo</a>
+            <div class="project-title">🛒 Digital Products Database <span class="badge">DB | Group</span></div>
+            <div class="project-detail"><strong>Problem:</strong> High-concurrency e-commerce database with ACID guarantees.</div>
+            <div class="project-detail"><strong>Approach:</strong> MySQL, 3NF design, index optimization, transaction management.</div>
+            <div class="project-detail"><strong>Outcome:</strong> 12ms avg latency, 134 TPS, zero orphaned records.</div>
+            <div class="project-detail"><strong>My Role:</strong> Documentation, consistency checks, report writing.</div>
+            <a href="#" class="btn">🔗 GitHub</a>
         </div>
 
-        <!-- PROJECT 4: Data Center Energy Prediction (DM Group Project) -->
         <div class="project-card">
-            <div class="project-title">
-                <span>⚡ AI Data Center Renewable Energy Prediction</span>
-                <span class="badge">2025 | Group Project (6 members)</span>
-            </div>
-            <div class="project-detail"><strong>Problem:</strong> AI industry growth drives increased energy consumption in data centers. Need to identify key factors driving renewable energy adoption and predict usage percentages.</div>
-            <div class="project-detail"><strong>Data:</strong> Global Data Center Dataset (191 countries/regions, 21 raw fields after cleaning: power capacity, internet penetration, cooling technologies, tier distribution).</div>
-            <div class="project-detail"><strong>Approach:</strong> Two-round data cleaning (missing value imputation, outlier winsorization, one-hot encoding). Feature selection via consensus score (Pearson/Spearman/MI/Permutation). Compared 9 models; Gradient Boosting selected (R²=0.784 on 8:2 grouped split).</div>
-            <div class="project-detail"><strong>Outcome/Impact:</strong> Final Gradient Boosting model (n_est=400, lr=0.08, max_depth=4) explains 72-78% of variance. Top predictors: internet penetration, green initiatives (PPA/REC), efficient cooling.</div>
-            <div class="project-detail"><strong>My Contribution:</strong> Document editing & layout, consistency checks, and report writing.</div>
-            <a href="#" class="btn">🔗 GitHub Repo</a>
+            <div class="project-title">⚡ Data Center Energy Prediction <span class="badge">DM | Group</span></div>
+            <div class="project-detail"><strong>Problem:</strong> Predict renewable energy adoption in AI data centers.</div>
+            <div class="project-detail"><strong>Approach:</strong> Gradient Boosting, feature selection (consensus score), grouped validation.</div>
+            <div class="project-detail"><strong>Outcome:</strong> R² 0.784, top predictors: internet penetration, green initiatives.</div>
+            <div class="project-detail"><strong>My Role:</strong> Documentation, integrity checks, report writing.</div>
+            <a href="#" class="btn">🔗 GitHub</a>
         </div>
 
-        <!-- PROJECT 5: Smart Contract Vulnerability Detection (Initial Proposal) -->
         <div class="project-card">
-            <div class="project-title">
-                <span>🔒 Smart Contract Vulnerability Detection (Web3 Security)</span>
-                <span class="badge">2026 | Group Project (6 members)</span>
-            </div>
-            <div class="project-detail"><strong>Problem:</strong> Smart contract vulnerabilities have caused >$3.1B losses. Existing tools produce high false positives (>95% on some benchmarks) and struggle with logic flaws.</div>
-            <div class="project-detail"><strong>Approach:</strong> Proposed multi-agent framework (n8n-orchestrated) combining tool evidence (Slither, Mythril) with GPT-4o-based agents (Triage → Explanation → Adversarial Verification → Report).</div>
-            <div class="project-detail"><strong>Outcome/Impact:</strong> Framework aims to reduce false positives while maintaining recall, with traceable evidence links and structured cross-checking. Currently in proposal/implementation phase.</div>
-            <div class="project-detail"><strong>My Contribution:</strong> Proposal writing, literature review, methodology design, and multi-agent workflow planning.</div>
-            <a href="#" class="btn">🔗 GitHub Repo</a>
-        </div>
-
-        <!-- PROJECT 6: France Car Accident Data Visualization (DV Group Project) -->
-        <div class="project-card">
-            <div class="project-title">
-                <span>📊 France Car Accident Fatalities Analysis (2005-2016)</span>
-                <span class="badge">2025 | Group Project</span>
-            </div>
-            <div class="project-detail"><strong>Problem:</strong> Analyze monthly distribution of car accident fatalities in France to identify seasonal patterns and risk factors.</div>
-            <div class="project-detail"><strong>Data:</strong> French car accident fatality records from 2005-2016, aggregated by month.</div>
-            <div class="project-detail"><strong>Approach:</strong> Data cleaning and aggregation, bar chart visualization with seasonal grouping, risk analysis by season (winter/spring/summer/autumn).</div>
-            <div class="project-detail"><strong>Outcome/Impact:</strong> Identified October (9,470) and June (9,330) as peak fatality months. Autumn is most dangerous season. February (6,740) and August (7,430) are safest months.</div>
-            <div class="project-detail"><strong>My Contribution:</strong> Data analysis, seasonal risk interpretation, and report writing.</div>
-            <a href="#" class="btn">📊 View Visualization</a>
-        </div>
-
-        <!-- PROJECT 7: Bachelor's Thesis (Individual Research) -->
-        <div class="project-card">
-            <div class="project-title">
-                <span>🔬 Nb₂O₅:TiO₂ Electrochromic & Battery Material Research</span>
-                <span class="badge">2025 | Individual Thesis</span>
-            </div>
-            <div class="project-detail"><strong>Problem:</strong> Traditional TiNb₂O₇ requires high-temperature annealing incompatible with glass substrates for smart window applications.</div>
-            <div class="project-detail"><strong>Data:</strong> Experimental data from material characterization tests (visible light modulation rates, energy storage capacity measurements).</div>
-            <div class="project-detail"><strong>Approach:</strong> Developed low-temperature Nb₂O₅:TiO₂ dual-function film. Used Nb-Ti electronic coupling effect to optimize performance. Conducted material synthesis, data measurement, and results analysis.</div>
-            <div class="project-detail"><strong>Outcome/Impact:</strong> Achieved 40% visible light modulation and 0.8mAh/cm² energy storage at <350°C, providing new solution for smart window industrialization.</div>
-            <div class="project-detail"><strong>My Contribution:</strong> Full project lifecycle - topic selection, experimental design, data measurement, results analysis, thesis writing. Advisor: Prof. Wu Jiawei.</div>
-            <a href="#" class="btn">📄 View Thesis Abstract</a>
+            <div class="project-title">🔬 Nb₂O₅:TiO₂ Smart Window Material <span class="badge">Research | Individual</span></div>
+            <div class="project-detail"><strong>Problem:</strong> High-temperature annealing limits glass compatibility.</div>
+            <div class="project-detail"><strong>Approach:</strong> Low-temperature synthesis, Nb-Ti electronic coupling optimization.</div>
+            <div class="project-detail"><strong>Outcome:</strong> 40% light modulation, 0.8mAh/cm² storage at <350°C.</div>
+            <div class="project-detail"><strong>My Role:</strong> Full project lifecycle (design, synthesis, analysis, thesis).</div>
+            <a href="#" class="btn">📄 Abstract</a>
         </div>
     </section>
 
-    <!-- ========== SECTION 5: RESUME / CV ========== -->
+    <!-- ========== SECTION 5: RESUME ========== -->
     <section id="resume">
-        <h2>Resume / CV</h2>
-        <p>Download my full resume below (PDF):</p>
-        <a href="#" class="btn">📄 Download Resume (PDF)</a>
-        <p style="margin-top: 15px;"><strong>Quick summary:</strong> Data Science master's student at Lingnan University. Bachelor's in Applied Physics from University of Macau. Experienced in ML classification, deep learning (LSTM), database design (MySQL), and data mining. Award-winning fencer with international competition experience. Bilingual (English & Chinese).</p>
-        
-        <h3 style="margin-top: 20px;">🏆 Fencing Awards</h3>
+        <h2>📄 Resume & Awards</h2>
+        <p>Download my full resume below:</p>
+        <a href="#" class="btn">📥 Download Resume (PDF)</a>
+
+        <h3 style="margin-top: 25px;">🏆 Fencing Awards</h3>
         <ul style="margin-left: 25px;">
-            <li><strong>2025:</strong> U23 Asian Fencing Championships - 28th Place</li>
-            <li><strong>2024:</strong> Macau Fencing Ranking Tournament (Men's Epee) - Runner-up</li>
-            <li><strong>2022:</strong> Macau Fencing Referee Level 3 (Foil, Epee, Sabre)</li>
+            <li>⚔️ <strong>2025</strong> — U23 Asian Fencing Championships (28th Place)</li>
+            <li>⚔️ <strong>2024</strong> — Macau Fencing Ranking Tournament, Men's Epee (Runner-up)</li>
+            <li>⚔️ <strong>2022</strong> — Macau Fencing Referee Level 3 (Foil, Epee, Sabre)</li>
         </ul>
 
-        <h3 style="margin-top: 15px;">🏅 Academic Awards</h3>
+        <h3>🏅 Academic Awards</h3>
         <ul style="margin-left: 25px;">
-            <li><strong>2024:</strong> 10th National University Physics Experiment Competition - First Prize</li>
+            <li>🏆 <strong>2024</strong> — National University Physics Experiment Competition (First Prize)</li>
         </ul>
 
-        <h3 style="margin-top: 15px;">📜 Certifications</h3>
+        <h3>📜 Certifications</h3>
         <ul style="margin-left: 25px;">
-            <li>Macau Fencing Referee Level 3 (Foil, Epee, Sabre) - 2022</li>
-            <li>Bachelor's Degree Certificate - University of Macau, 2025</li>
+            <li>Macau Fencing Referee Level 3 (Foil, Epee, Sabre) — 2022</li>
+            <li>Bachelor's Degree Certificate — University of Macau, 2025</li>
         </ul>
     </section>
 
     <!-- ========== SECTION 6: CONTACT ========== -->
     <section id="contact">
-        <h2>Contact Me</h2>
+        <h2>📬 Contact Me</h2>
         <div class="contact-info">
             📧 <strong>Email:</strong> cesonseason@gmail.com<br>
             📞 <strong>Phone:</strong> +853 63281260 / +86 17205909032<br>
@@ -391,12 +466,12 @@
             🐙 <strong>GitHub:</strong> <a href="#">github.com/cesonseason</a><br>
             📍 <strong>Location:</strong> Macau / Hong Kong
         </div>
-        <p style="margin-top: 1rem;">Feel free to reach out for internship opportunities or collaboration.</p>
+        <p style="margin-top: 1rem;">✨ Open for internship opportunities starting Summer 2026 ✨</p>
     </section>
 </div>
 
 <footer>
-    © 2025 Lam Chi Chon (林子竣) — Data Science Portfolio | Last updated April 2025
+    © 2025 Lam Chi Chon (林子竣) — Data Science Portfolio | Built with 🖤 for Web3
 </footer>
 
 </body>
